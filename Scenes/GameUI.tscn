@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GameUI.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Music/Car.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Music/Yes.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Music/2.mp3" type="AudioStream" id=4]
+
+[node name="GameUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblLapCounter" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -466.0
+margin_top = 245.0
+margin_right = -399.0
+margin_bottom = 263.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( -30.25, 57.25 )
+text = "Lap 1/1"
+align = 2
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Won" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+volume_db = 8.0
+autoplay = true
+
+[node name="Car" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+volume_db = 4.0
+autoplay = true
+
+[node name="lblInstructions" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -66.0
+margin_top = 84.0
+margin_right = -8.0
+margin_bottom = 102.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( -30.25, 57.25 )
+text = "Click Mouse Left Button and Move"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
