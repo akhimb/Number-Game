@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/GameUI.cs" type="Script" id=1]
-[ext_resource path="res://Assets/Music/Car.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Music/Yes.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Music/2.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Images/Mouse.png" type="Texture" id=5]
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -32,29 +31,49 @@ __meta__ = {
 [node name="Won" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="Background" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 4 )
-volume_db = 8.0
-autoplay = true
-
-[node name="Car" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 2 )
-volume_db = 4.0
-autoplay = true
-
 [node name="lblInstructions" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = -66.0
-margin_top = 84.0
-margin_right = -8.0
-margin_bottom = 102.0
+margin_left = -72.0
+margin_top = 95.0
+margin_right = 415.0
+margin_bottom = 113.0
 rect_scale = Vector2( 4, 4 )
 rect_pivot_offset = Vector2( -30.25, 57.25 )
-text = "Click Mouse Left Button and Move"
+text = "Click left mouse button to move forward and right button to move backward."
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CkBtnUseMouse" type="CheckButton" parent="."]
+margin_right = 76.0
+margin_bottom = 40.0
+rect_scale = Vector2( 4.12, 4.12 )
+hint_tooltip = "Click to choose between keyboard and mouse."
+pressed = true
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonNextLevel" type="Button" parent="."]
+modulate = Color( 0.0784314, 1, 0.435294, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -10.0
+margin_right = 15.0
+margin_bottom = 10.0
+rect_scale = Vector2( 13.4211, 10.8805 )
+hint_tooltip = "Click to Go to Next Level."
+text = "Go"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="CkBtnUseMouse" to="." method="_on_CkBtnUseMouse_toggled"]
+[connection signal="pressed" from="ButtonNextLevel" to="." method="_on_ButtonNextLevel_pressed"]

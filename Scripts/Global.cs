@@ -12,6 +12,7 @@ public class Global : Node
 
     private AudioStreamPlayer _BackgroundMusic;
 
+
     public override void _Ready()
     {
         _cs = GetNode<CustomSignals>("/root/CS");
@@ -30,6 +31,7 @@ public class Global : Node
             if (_lapCounter >= MaxLaps)
             {
                 _cs.EmitSignal("raceOver");
+                _lapCounter = 0;
             }
 
         }

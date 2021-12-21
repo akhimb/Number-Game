@@ -8,7 +8,6 @@ public class Level_1 : Node2D
     public override void _Ready()
     {
          GLOBAL = GetNode<Global>("/root/Global");
-         GLOBAL.MaxLaps = 5;
+         GLOBAL.MaxLaps = 4;
     }
-
 }

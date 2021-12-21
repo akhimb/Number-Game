@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/Totto-Songs.wav-674a357ff04cb87e1401545f6daf6211.sample"
+
+[deps]
+
+source_file="res://Assets/Images/Level1/Totto-Songs.wav"
+dest_files=[ "res://import/Totto-Songs.wav-674a357ff04cb87e1401545f6daf6211.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

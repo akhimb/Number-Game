@@ -1,0 +1,245 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Images/Level1/OneParrot.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Level1/OneFish.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Level1/OneFinger.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Level1/Birds.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Level1/One-Cat.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Level1/Balls.jpg.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Level1/One-Elephant.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Level1/One-Finger-Sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Tracks/Level_4.cs" type="Script" id=10]
+[ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/Mouse.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=14]
+
+[node name="Level_4" type="Node2D"]
+position = Vector2( 62, 202 )
+script = ExtResource( 10 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -64.0
+margin_top = -198.0
+margin_right = 963.0
+margin_bottom = 399.0
+color = Color( 0.980392, 0.886275, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneFish" type="Sprite" parent="."]
+position = Vector2( 118, -89 )
+texture = ExtResource( 2 )
+
+[node name="FishButton" type="Button" parent="OneFish"]
+margin_left = -45.0
+margin_top = 99.0
+margin_right = 22.0
+margin_bottom = 129.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Play"
+icon = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneFinger" type="Sprite" parent="."]
+position = Vector2( 377, -88 )
+texture = ExtResource( 3 )
+
+[node name="FingerButton" type="Button" parent="OneFinger"]
+margin_left = -43.0
+margin_top = 102.0
+margin_right = 21.0
+margin_bottom = 132.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Play"
+icon = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choose Rectangle" type="ColorRect" parent="."]
+margin_left = -30.0
+margin_top = 75.0
+margin_right = 913.0
+margin_bottom = 343.0
+color = Color( 0.908795, 0.735947, 0.910156, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ball-Rectangle" type="ColorRect" parent="Choose Rectangle"]
+margin_left = 521.0
+margin_top = 53.0
+margin_right = 671.0
+margin_bottom = 203.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ballsjpg" type="Sprite" parent="Choose Rectangle/Ball-Rectangle"]
+position = Vector2( 73.6206, 76.3618 )
+scale = Vector2( 0.978392, 1.00851 )
+texture = ExtResource( 6 )
+
+[node name="One-Elephant" type="Sprite" parent="Choose Rectangle"]
+position = Vector2( 804, 126 )
+texture = ExtResource( 7 )
+
+[node name="Birds" type="Sprite" parent="Choose Rectangle"]
+position = Vector2( 386, 129 )
+texture = ExtResource( 4 )
+
+[node name="One-Cat" type="Sprite" parent="Choose Rectangle"]
+position = Vector2( 180, 131 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Choose Rectangle"]
+modulate = Color( 0.027451, 0.00392157, 0.00392157, 1 )
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 229.0
+margin_bottom = 16.0
+rect_scale = Vector2( 2, 2 )
+text = "Tick the boxes which have one in it."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 575.0
+margin_top = -185.0
+margin_right = 923.0
+margin_bottom = 8.0
+color = Color( 0.917647, 0.827451, 0.929412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+modulate = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 183.0
+margin_bottom = 17.0
+rect_scale = Vector2( 1.872, 1.56 )
+text = "How many birds are there ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneParrot" type="Sprite" parent="ColorRect"]
+position = Vector2( 124, 100 )
+scale = Vector2( 0.584239, 0.5725 )
+texture = ExtResource( 1 )
+
+[node name="One-Fish-Sound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+volume_db = 8.0
+
+[node name="One-Finger-Sound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+volume_db = 8.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 723.0
+margin_top = 331.0
+margin_right = 776.0
+margin_bottom = 360.0
+rect_scale = Vector2( 2, 2 )
+text = "OK"
+icon = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartGame" type="Button" parent="."]
+margin_left = 463.0
+margin_top = 331.0
+margin_right = 588.0
+margin_bottom = 361.0
+rect_scale = Vector2( 2, 2 )
+text = "Restart Game"
+icon = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelResult" type="Label" parent="."]
+modulate = Color( 0.937255, 0.321569, 0.0235294, 1 )
+margin_left = -14.0
+margin_top = 359.0
+margin_right = 26.0
+margin_bottom = 373.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxBirds" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 343.0
+margin_top = 274.0
+margin_right = 367.0
+margin_bottom = 298.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxKitten" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 131.0
+margin_top = 276.0
+margin_right = 155.0
+margin_bottom = 300.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxElephant" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 756.0
+margin_top = 270.0
+margin_right = 780.0
+margin_bottom = 294.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxBalls" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 545.0
+margin_top = 270.0
+margin_right = 569.0
+margin_bottom = 294.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TxtBoxParrotCount" type="TextEdit" parent="."]
+margin_left = 763.0
+margin_top = -133.0
+margin_right = 813.0
+margin_bottom = -83.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WonMatch" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 14 )
+volume_db = 15.0
+
+[connection signal="pressed" from="OneFish/FishButton" to="." method="_on_FishButton_pressed"]
+[connection signal="pressed" from="OneFinger/FingerButton" to="." method="_on_FingerButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="RestartGame" to="." method="_on_RestartGame_pressed"]
