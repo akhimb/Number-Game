@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/One-Fish_Sound.wav-c80557ea21bc2d0eea9d8209997b6a22.sample"
+
+[deps]
+
+source_file="res://Assets/Images/Level1/One-Fish_Sound.wav"
+dest_files=[ "res://import/One-Fish_Sound.wav-c80557ea21bc2d0eea9d8209997b6a22.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

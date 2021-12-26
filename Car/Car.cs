@@ -78,31 +78,31 @@ public class Car : KinematicBody2D
 
     }
 
-    public override void _Input(InputEvent inputEvent)
-    {
+    // public override void _Input(InputEvent inputEvent)
+    // {
 
-        if (inputEvent is InputEventScreenTouch touchEvent && inputEvent.IsPressed())
-        {
-            LookAt(GetGlobalMousePosition());
-            touchPosition = touchEvent.Position;
-            deltaX = touchPosition.x - Position.x;
-            deltaY = touchPosition.y - Position.y;
-            _velocity = new Vector2(speed, 0).Rotated(Rotation);
-            _velocity = _velocity.Normalized() * speed;
-            _velocity = MoveAndSlide(_velocity);
-        }
-        else if (inputEvent is InputEventScreenDrag tragEvent)
-        {
-            touchPosition = tragEvent.Position;
-            newDeltaX = touchPosition.x - deltaX;
-            newDeltaY = touchPosition.y - deltaY;
-            Position = new Vector2(newDeltaX, newDeltaY);
-            _velocity = new Vector2(speed, 0).Rotated(Rotation);
-            _velocity = _velocity.Normalized() * speed;
-            _velocity = MoveAndSlide(_velocity);
-        }
+    //     if (inputEvent is InputEventScreenTouch touchEvent && inputEvent.IsPressed())
+    //     {
+    //         LookAt(GetGlobalMousePosition());
+    //         touchPosition = touchEvent.Position;
+    //         deltaX = touchPosition.x - Position.x;
+    //         deltaY = touchPosition.y - Position.y;
+    //         _velocity = new Vector2(speed, 0).Rotated(Rotation);
+    //         _velocity = _velocity.Normalized() * speed;
+    //         _velocity = MoveAndSlide(_velocity);
+    //     }
+    //     else if (inputEvent is InputEventScreenDrag tragEvent)
+    //     {
+    //         touchPosition = tragEvent.Position;
+    //         newDeltaX = touchPosition.x - deltaX;
+    //         newDeltaY = touchPosition.y - deltaY;
+    //         Position = new Vector2(newDeltaX, newDeltaY);
+    //         _velocity = new Vector2(speed, 0).Rotated(Rotation);
+    //         _velocity = _velocity.Normalized() * speed;
+    //         _velocity = MoveAndSlide(_velocity);
+    //     }
 
-    }
+    // }
 
 
     public void GetMouseInput()

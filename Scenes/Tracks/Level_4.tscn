@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Images/Level1/OneParrot.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Level1/OneFish.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Level1/OneFinger.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Level1/Birds.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Level1/One-Cat.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/Level1/Balls.jpg.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Level1/Balls.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Level1/One-Elephant.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Level1/One-Finger-Sound.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=9]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Images/Mouse.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Images/Level1/123.png" type="Texture" id=15]
 
 [node name="Level_4" type="Node2D"]
 position = Vector2( 62, 202 )
@@ -71,20 +72,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ball-Rectangle" type="ColorRect" parent="Choose Rectangle"]
-margin_left = 521.0
-margin_top = 53.0
-margin_right = 671.0
-margin_bottom = 203.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ballsjpg" type="Sprite" parent="Choose Rectangle/Ball-Rectangle"]
-position = Vector2( 73.6206, 76.3618 )
-scale = Vector2( 0.978392, 1.00851 )
-texture = ExtResource( 6 )
-
 [node name="One-Elephant" type="Sprite" parent="Choose Rectangle"]
 position = Vector2( 804, 126 )
 texture = ExtResource( 7 )
@@ -109,6 +96,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Balls" type="Sprite" parent="Choose Rectangle"]
+position = Vector2( 598, 128 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 575.0
 margin_top = -185.0
@@ -132,7 +124,7 @@ __meta__ = {
 }
 
 [node name="OneParrot" type="Sprite" parent="ColorRect"]
-position = Vector2( 124, 100 )
+position = Vector2( 63, 100 )
 scale = Vector2( 0.584239, 0.5725 )
 texture = ExtResource( 1 )
 
@@ -225,21 +217,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TxtBoxParrotCount" type="TextEdit" parent="."]
-margin_left = 763.0
-margin_top = -133.0
-margin_right = 813.0
-margin_bottom = -83.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="WonMatch" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 14 )
 volume_db = 15.0
 
+[node name="123" type="Sprite" parent="."]
+position = Vector2( 784, -81 )
+scale = Vector2( 0.392455, 0.392455 )
+texture = ExtResource( 15 )
+
+[node name="CheckBoxOne" type="CheckBox" parent="."]
+margin_left = 779.0
+margin_top = -160.0
+margin_right = 803.0
+margin_bottom = -136.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxTwo" type="CheckBox" parent="."]
+margin_left = 778.0
+margin_top = -107.0
+margin_right = 802.0
+margin_bottom = -83.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxThree" type="CheckBox" parent="."]
+margin_left = 779.0
+margin_top = -51.0
+margin_right = 803.0
+margin_bottom = -27.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="OneFish/FishButton" to="." method="_on_FishButton_pressed"]
 [connection signal="pressed" from="OneFinger/FingerButton" to="." method="_on_FingerButton_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="RestartGame" to="." method="_on_RestartGame_pressed"]
+[connection signal="toggled" from="CheckBoxOne" to="." method="_on_CheckBoxOne_toggled"]
+[connection signal="toggled" from="CheckBoxTwo" to="." method="_on_CheckBoxTwo_toggled"]
+[connection signal="toggled" from="CheckBoxThree" to="." method="_on_CheckBoxThree_toggled"]

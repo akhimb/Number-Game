@@ -77,14 +77,15 @@ public class Ant : KinematicBody2D
         {
             return;
         }
+        GD.Print(GetGlobalMousePosition());
         LookAt(GetGlobalMousePosition());
         _velocity = new Vector2();
 
         if (Input.IsActionPressed("mouse-left"))
+        {
             _velocity = new Vector2(speed, 0).Rotated(Rotation);
+        }
 
-        if (Input.IsActionPressed("mouse-right"))
-            _velocity = new Vector2(-speed, 0).Rotated(Rotation);
 
         _velocity = _velocity.Normalized() * speed;
     }
