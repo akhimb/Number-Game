@@ -1,14 +1,13 @@
 using Godot;
-using System;
-
 public class Level_3 : Node2D
 {
-
-   private Global GLOBAL;
+           private AudioStreamPlayer _Three;
+    private Global GLOBAL;
     public override void _Ready()
     {
-         GLOBAL = GetNode<Global>("/root/Global");
-         GLOBAL.MaxLaps = 15;
+        GLOBAL = GetNode<Global>("/root/Global");
+        GLOBAL.MaxLaps = 14;
+                _Three = GetNode<AudioStreamPlayer>("Three");
+        _Three.Play();
     }
-
 }

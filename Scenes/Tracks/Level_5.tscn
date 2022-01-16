@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Canvas/Canvas.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Templates/4.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Tracks/Level_5.cs" type="Script" id=6]
+[ext_resource path="res://Assets/Music/Four.wav" type="AudioStream" id=7]
+
+[node name="Level_5" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="GameUI" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 2340.0
+margin_bottom = 1080.0
+
+[node name="4" type="Sprite" parent="."]
+position = Vector2( 1170, 552 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
+polygon = PoolVector2Array( 1113, 264, 861, 627, 862, 701, 1165, 703, 1133, 798, 1173, 865, 1214, 904, 1295, 887, 1322, 802, 1289, 712, 1396, 713, 1394, 607, 1289, 607, 1292, 497, 1173, 497, 1173, 603, 1020, 605, 1269, 268, 1394, 236, 1731, 591, 1415, 923, 1197, 927, 796, 823, 715, 463, 1041, 252, 1108, 208, 1329, 228, 1268, 258, 1225, 234, 1154, 231 )
+
+[node name="Canvas" parent="Boundary" instance=ExtResource( 4 )]
+
+[node name="CheckPoint" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1156, 329 )
+rotation = 2.2321
+scale = Vector2( 0.3, 0.3 )
+_isFirstCheckPoint = true
+_isDrawEnabled = false
+_nextCheckPoint = NodePath("../CheckPoint1")
+_currentCheckPoint = NodePath(".")
+
+[node name="CheckPoint1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1071, 444 )
+rotation = 2.26893
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint2")
+
+[node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 985, 558 )
+rotation = 2.26893
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint3")
+
+[node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 927, 657 )
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint4")
+
+[node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1079, 657 )
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint5")
+
+[node name="CheckPoint5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1231, 661 )
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint6")
+
+[node name="CheckPoint6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1343, 657 )
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint7")
+
+[node name="CheckPoint7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1231, 553 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_isDrawEnabled = false
+_nextCheckPoint = NodePath("../CheckPoint8")
+
+[node name="CheckPoint8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1230, 808 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1171, -530 )
+scale = Vector2( 2, 2 )
+offset = Vector2( 2340, 1080 )
+current = true
+
+[node name="HandDot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1211, 282 )
+
+[node name="Four" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )

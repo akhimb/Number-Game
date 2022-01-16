@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/ItsOkay.wav-d166bcc010229592e708044e8231051d.sample"
+
+[deps]
+
+source_file="res://Assets/Images/Level1/ItsOkay.wav"
+dest_files=[ "res://import/ItsOkay.wav-d166bcc010229592e708044e8231051d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

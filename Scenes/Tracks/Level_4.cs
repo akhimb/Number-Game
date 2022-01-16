@@ -6,36 +6,40 @@ public class Level_4 : Node2D
     private AudioStreamPlayer _FishSound;
     private AudioStreamPlayer _FingerSound;
     private AudioStreamPlayer _WonMatch;
+    private AudioStreamPlayer _Okay;
     private int totalMarks = 0;
-    private Button restartGameButton;
+    private Button goNextButton;
     private Button submitButton;
     private Label labelResult;
     private Boolean checkBoxOnePressed;
     private CheckBox checkBoxOne;
     private CheckBox checkBoxTwo;
     private CheckBox checkBoxThree;
+    private CustomSignals _cs;
     public override void _Ready()
     {
         _FishSound = GetNode<AudioStreamPlayer>("One-Fish-Sound");
         _FingerSound = GetNode<AudioStreamPlayer>("One-Finger-Sound");
         _WonMatch = GetNode<AudioStreamPlayer>("WonMatch");
-        restartGameButton = GetNode<Button>("RestartGame");
-        restartGameButton.Visible = false;
-        submitButton = GetNode<Button>("Button");
+        _Okay = GetNode<AudioStreamPlayer>("Okay");
+        goNextButton = GetNode<Button>("GoNextButton");
+        goNextButton.Visible = false;
+        submitButton = GetNode<Button>("SubmitButton");
         labelResult = GetNode<Label>("LabelResult");
         checkBoxOne = GetNode<CheckBox>("CheckBoxOne");
         checkBoxTwo = GetNode<CheckBox>("CheckBoxTwo");
         checkBoxThree = GetNode<CheckBox>("CheckBoxThree");
+        _cs = GetNode<CustomSignals>("/root/CS");
+
     }
 
     public void _on_FishButton_pressed()
     {
         _FishSound.Play();
     }
-    public void _on_RestartGame_pressed()
+    public void _on_NextLevel_pressed()
     {
-        GetTree().ChangeScene($"res://Scenes/Tracks/Level_0.tscn");
-        GetTree().CurrentScene._Ready();
+        _cs.EmitSignal("changeLevel");
     }
 
 
@@ -46,7 +50,6 @@ public class Level_4 : Node2D
 
     public void _on_Button_pressed()
     {
-        TextEdit parrotCount = GetNode<TextEdit>("TxtBoxParrotCount");
         CheckBox checkBoxBirds = GetNode<CheckBox>("CheckBoxBirds");
         CheckBox checkBoxKitten = GetNode<CheckBox>("CheckBoxKitten");
         CheckBox checkBoxElephant = GetNode<CheckBox>("CheckBoxElephant");
@@ -58,9 +61,18 @@ public class Level_4 : Node2D
         totalMarks = checkBoxElephant.Pressed == true ? totalMarks += 10 : totalMarks -= 0;
         totalMarks = checkBoxKitten.Pressed == true ? totalMarks += 10 : totalMarks -= 0;
         submitButton.Visible = false;
-        restartGameButton.Visible = true;
+        goNextButton.Visible = true;
         labelResult.Text = $"Congrats... You scored : {totalMarks} / 50";
-        _WonMatch.Play();
+        if (totalMarks < 31)
+        {
+            _Okay.Play();
+        }
+        else
+        {
+            _WonMatch.Play();
+        }
+
+
     }
 
 

@@ -1,66 +1,71 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Car/Car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Music/Yeeha.mp3" type="AudioStream" id=4]
-[ext_resource path="res://Scenes/Tilesets/Level_1.tres" type="TileSet" id=5]
+[ext_resource path="res://Scenes/Canvas/Canvas.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Templates/1.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Tracks/Level_1.cs" type="Script" id=6]
+[ext_resource path="res://Assets/Music/One.wav" type="AudioStream" id=7]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 6 )
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 5 )
-cell_size = Vector2( 128, 128 )
-cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
-show_collision = true
-format = 1
-tile_data = PoolIntArray( 65543, 1, 65536, 65544, 1, 0, 65545, 1, 0, 65546, 1, 851968, 131079, 1, 655360, 131080, 1, 131072, 131081, 1, 131072, 131082, 1, 524288, 196615, 1, 655360, 196616, 1, 131072, 196617, 1, 131072, 196618, 1, 524288, 262151, 1, 655360, 262152, 1, 589824, 262153, 1, 131072, 262154, 1, 524288, 327687, 1, 655360, 327688, 1, 589824, 327689, 1, 131072, 327690, 1, 524288, 393223, 1, 655360, 393224, 1, 589824, 393225, 1, 131072, 393226, 1, 524288, 458759, 1, 655360, 458760, 1, 589824, 458761, 1, 131072, 458762, 1, 524288, 524295, 1, 655360, 524296, 1, 589824, 524297, 1, 131072, 524298, 1, 524288, 589831, 1, 655360, 589832, 1, 589824, 589833, 1, 131072, 589834, 1, 524288, 655367, 1, 655360, 655368, 1, 589824, 655369, 1, 589824, 655370, 1, 524288, 720903, 1, 655360, 720904, 1, 589824, 720905, 1, 589824, 720906, 1, 524288, 786439, 1, 655360, 786440, 1, 589824, 786441, 1, 589824, 786442, 1, 524288, 851975, 1, 655360, 851976, 1, 589824, 851977, 1, 589824, 851978, 1, 524288, 917511, 1, 327680, 917512, 1, 262144, 917513, 1, 262144, 917514, 1, 196608 )
+[node name="1" type="Sprite" parent="."]
+position = Vector2( 1169, 543 )
+texture = ExtResource( 5 )
 
-[node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1151, 383 )
-rotation = 1.5708
-_isFirstCheckPoint = true
-_nextCheckPoint = NodePath("../CheckPoint3")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1148, 776 )
-rotation = 1.5708
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint4")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 1078, 251, 1070, 831, 1167, 845, 1249, 828, 1246, 188, 1068, 201, 1084, 179, 1276, 163, 1266, 845, 1166, 857, 1049, 845, 1052, 215, 1073, 198 )
 
-[node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1145, 1263 )
-rotation = 1.5708
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint5")
-
-[node name="CheckPoint5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1155, 1691 )
-rotation = 1.5708
-_isActive = false
-_isLastCheckPoint = true
-_nextCheckPoint = NodePath("../CheckPoint2")
-
-[node name="Yellow Car" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1165, 359 )
-rotation = 1.5708
+[node name="Canvas" parent="StaticBody2D" instance=ExtResource( 4 )]
 
 [node name="GameUI" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -544.0
-margin_top = 87.0
-margin_right = 2727.0
-margin_bottom = 2008.0
+margin_right = 2340.0
+margin_bottom = 1080.0
+
+[node name="CheckPoint1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1160, 279 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+_isFirstCheckPoint = true
+_nextCheckPoint = NodePath("../CheckPoint2")
+_currentCheckPoint = NodePath(".")
+
+[node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1159, 423 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint3")
+
+[node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1159, 596 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+_isActive = false
+_nextCheckPoint = NodePath("../CheckPoint4")
+
+[node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1166, 796 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+_isActive = false
+_isDrawEnabled = false
+_nextCheckPoint = NodePath("../CheckPoint1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1088, 1052 )
-scale = Vector2( 10, 10 )
+position = Vector2( -1171, -530 )
+scale = Vector2( 2, 2 )
+offset = Vector2( 2340, 1080 )
 current = true
-zoom = Vector2( 3.2, 3.2 )
 
-[node name="Yeeha" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -5.0
+[node name="HandDot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1164, 218 )
+
+[node name="One" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )

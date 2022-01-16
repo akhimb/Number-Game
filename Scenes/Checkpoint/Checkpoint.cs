@@ -4,28 +4,30 @@ using System;
 public class Checkpoint : Area2D
 {
     [Export] private bool _isActive = false;
-    [Export] private bool _isFinishLine = false;
     [Export] private bool _isFirstCheckPoint = false;
     [Export] private bool _isLastCheckPoint = false;
+    [Export] private bool _isDrawEnabled = true;
     [Export] private NodePath _nextCheckPoint;
+    [Export] private NodePath _currentCheckPoint;
     private Checkpoint _NextCheckPoint;
-    private Checkpoint _BeforeCheckPoint;
-    private AudioStreamPlayer _YeehaSound;
-
-    private int _xValue = 0;
-    private int _newXValue = 0;
     private Global GLOBAL;
+    private AudioStreamPlayer _playMileStone;
+    private CollisionShape2D _collisionShape2D;
+
+    private CustomSignals _cs;
 
     public override void _Ready()
     {
         GLOBAL = GetNode<Global>("/root/Global");
-        _YeehaSound = GetNode<AudioStreamPlayer>("../Yeeha");
+        _playMileStone = GetNode<AudioStreamPlayer>("PlayMileStone");
+        _collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
         this.SetProcess(true);
+        _cs = GetNode<CustomSignals>("/root/CS");
     }
 
     public override void _Draw()
     {
-        DrawLine(new Vector2(_xValue, _xValue), new Vector2(_newXValue, _xValue), new Color(1, 0, 0), 25f);
+
     }
 
     public override void _Process(float delta)
@@ -39,20 +41,28 @@ public class Checkpoint : Area2D
         {
             GLOBAL.LapCounter++;
             _isActive = false;
-            _YeehaSound.Play();
+            if (_currentCheckPoint!=null && GetNode<Checkpoint>(_currentCheckPoint)._isFirstCheckPoint)
+            {
+                GD.Print("Chalk Activated");
+                _cs.EmitSignal("enableChalk");
+            }
+            
             _NextCheckPoint = GetNode<Checkpoint>(_nextCheckPoint);
             if (!_NextCheckPoint._isFirstCheckPoint)
             {
                 _NextCheckPoint.Activate();
-                _newXValue = 350;
-                Update();
+                _playMileStone.Play();
             }
+
+            // if (_NextCheckPoint._isDrawEnabled)
+            // {
+            //     GD.Print("Inside");
+            // }
         }
     }
 
     public void Activate()
     {
         _isActive = true;
-        _YeehaSound.Stop();
     }
 }
