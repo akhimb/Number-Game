@@ -1,21 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Canvas/Canvas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Templates/4.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Tracks/Level_5.cs" type="Script" id=6]
 [ext_resource path="res://Assets/Music/Four.wav" type="AudioStream" id=7]
 
 [node name="Level_5" type="Node2D"]
 script = ExtResource( 6 )
-
-[node name="GameUI" parent="." instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 2340.0
-margin_bottom = 1080.0
 
 [node name="4" type="Sprite" parent="."]
 position = Vector2( 1170, 552 )
@@ -24,74 +17,87 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="GameUI" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 2340.0
+margin_bottom = 1079.0
+
 [node name="Boundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
-polygon = PoolVector2Array( 1113, 264, 861, 627, 862, 701, 1165, 703, 1133, 798, 1173, 865, 1214, 904, 1295, 887, 1322, 802, 1289, 712, 1396, 713, 1394, 607, 1289, 607, 1292, 497, 1173, 497, 1173, 603, 1020, 605, 1269, 268, 1394, 236, 1731, 591, 1415, 923, 1197, 927, 796, 823, 715, 463, 1041, 252, 1108, 208, 1329, 228, 1268, 258, 1225, 234, 1154, 231 )
-
-[node name="Canvas" parent="Boundary" instance=ExtResource( 4 )]
+position = Vector2( -681.349, -314.811 )
+scale = Vector2( 1.60495, 1.58293 )
+polygon = PoolVector2Array( 1113, 264, 861, 627, 862, 701, 1165, 703, 1133, 798, 1173, 865, 1238.89, 870.418, 1287.48, 866.628, 1322, 802, 1289, 712, 1396, 713, 1394, 607, 1289, 607, 1292, 497, 1173, 497, 1173, 603, 1040.75, 599.402, 1063.18, 564.656, 1269, 268, 1339.2, 228.57, 1265.68, 301.852, 1147.92, 462.314, 1070.66, 575.396, 1149.16, 578.554, 1168.48, 475.581, 1312.41, 476.844, 1308.05, 577.291, 1405.25, 581.713, 1408.36, 648.677, 1408.36, 737.753, 1326.74, 736.489, 1336.08, 819.247, 1317.39, 884.316, 1215.21, 893.793, 1147.92, 883.053, 1113.02, 797.136, 1119.26, 742.807, 1072.53, 731.435, 852.58, 728.277, 837.004, 620.249, 1080, 265.211, 1138.57, 217.199, 1329, 228, 1268, 258, 1225, 234, 1154, 231 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1156, 329 )
+position = Vector2( 1180, 197 )
 rotation = 2.2321
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.4, 0.4 )
 _isFirstCheckPoint = true
-_isDrawEnabled = false
 _nextCheckPoint = NodePath("../CheckPoint1")
 _currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1071, 444 )
-rotation = 2.26893
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 1046, 372 )
+rotation = 2.15094
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint2")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 985, 558 )
-rotation = 2.26893
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 910, 551 )
+rotation = 2.17153
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint3")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 927, 657 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 811, 719 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint4")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1079, 657 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 1014, 720 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint5")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1231, 661 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 1292, 721 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint6")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1343, 657 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 1458, 721 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint7")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1231, 553 )
+position = Vector2( 1295, 550 )
 rotation = 1.5708
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
-_isDrawEnabled = false
 _nextCheckPoint = NodePath("../CheckPoint8")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1230, 808 )
+position = Vector2( 1294, 916 )
 rotation = 1.5708
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint")
+_currentCheckPoint = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -1171, -530 )
@@ -100,7 +106,7 @@ offset = Vector2( 2340, 1080 )
 current = true
 
 [node name="HandDot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1211, 282 )
+position = Vector2( 1242, 79 )
 
 [node name="Four" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

@@ -6,10 +6,10 @@ public class Checkpoint : Area2D
     [Export] private bool _isActive = false;
     [Export] private bool _isFirstCheckPoint = false;
     [Export] private bool _isLastCheckPoint = false;
-    [Export] private bool _isDrawEnabled = true;
     [Export] private NodePath _nextCheckPoint;
     [Export] private NodePath _currentCheckPoint;
     private Checkpoint _NextCheckPoint;
+    private Checkpoint _CurrentCheckPoint;
     private Global GLOBAL;
     private AudioStreamPlayer _playMileStone;
     private CollisionShape2D _collisionShape2D;
@@ -41,23 +41,24 @@ public class Checkpoint : Area2D
         {
             GLOBAL.LapCounter++;
             _isActive = false;
-            if (_currentCheckPoint!=null && GetNode<Checkpoint>(_currentCheckPoint)._isFirstCheckPoint)
+            if (_currentCheckPoint != null)
             {
-                GD.Print("Chalk Activated");
-                _cs.EmitSignal("enableChalk");
+                this._CurrentCheckPoint = GetNode<Checkpoint>(_currentCheckPoint);
+                if (this._CurrentCheckPoint._isFirstCheckPoint)
+                    _cs.EmitSignal("enableChalk");
+                this._CurrentCheckPoint.Scale = new Vector2(.1f, .1f);
+                this._CurrentCheckPoint.Modulate = new Color(220,220,220);
             }
-            
-            _NextCheckPoint = GetNode<Checkpoint>(_nextCheckPoint);
-            if (!_NextCheckPoint._isFirstCheckPoint)
+            if (_nextCheckPoint != null)
             {
-                _NextCheckPoint.Activate();
-                _playMileStone.Play();
+                this._NextCheckPoint = GetNode<Checkpoint>(_nextCheckPoint);
+                if (!_NextCheckPoint._isFirstCheckPoint)
+                {
+                    this._NextCheckPoint.Modulate = new Color(0,128,0);
+                    this._NextCheckPoint.Activate();
+                    _playMileStone.Play();
+                }
             }
-
-            // if (_NextCheckPoint._isDrawEnabled)
-            // {
-            //     GD.Print("Inside");
-            // }
         }
     }
 

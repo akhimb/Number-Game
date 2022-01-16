@@ -2,7 +2,7 @@ using Godot;
 
 public class HandDot : KinematicBody2D
 {
-    [Export] public int speed = 650;
+    [Export] public int speed = 700;
     private Vector2 _velocity = Vector2.Zero;
     private bool allowInput = true;
     private CustomSignals _cs;
@@ -37,7 +37,7 @@ public class HandDot : KinematicBody2D
         {
             LookAt(GetGlobalMousePosition());
             _velocity = new Vector2(speed, 0).Rotated(Rotation);
-            _velocity = _velocity.Normalized() * speed;
+            //_velocity = _velocity.Normalized() * speed;
             _velocity = MoveAndSlide(_velocity);
         }
     }

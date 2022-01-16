@@ -1,15 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Canvas/Canvas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Templates/6.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Tracks/Level_7.cs" type="Script" id=6]
 [ext_resource path="res://Assets/Music/Six.wav" type="AudioStream" id=7]
 
 [node name="Level_7" type="Node2D"]
 script = ExtResource( 6 )
+
+[node name="6" type="Sprite" parent="."]
+position = Vector2( 1170, 552 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GameUI" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -20,105 +26,108 @@ margin_right = 2342.0
 margin_bottom = 1081.0
 rect_rotation = -0.0252986
 
-[node name="6" type="Sprite" parent="."]
-position = Vector2( 1170, 552 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Boundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
-polygon = PoolVector2Array( 1316, 386, 1356, 399, 1410, 374, 1392, 309, 1365, 296, 1273, 258, 1141, 256, 1030, 291, 951, 364, 900, 502, 892, 628, 949, 764, 1055, 831, 1211, 845, 1330, 793, 1381, 704, 1386, 590, 1347, 531, 1252, 477, 1125, 472, 1024, 515, 1063, 421, 1132, 369, 1220, 367, 1286, 391, 1290, 409, 1170, 383, 1089, 428, 1065, 469, 1219, 448, 1387, 523, 1413, 656, 1382, 767, 1286, 861, 1025, 864, 901, 726, 852, 505, 957, 302, 1124, 239, 1292, 239, 1392, 278, 1436, 309, 1425, 369, 1407, 403, 1375, 423, 1339, 421, 1300, 415, 1293, 383 )
-
-[node name="Canvas" parent="Boundary" instance=ExtResource( 4 )]
+position = Vector2( -783.418, -386.983 )
+scale = Vector2( 1.69092, 1.689 )
+polygon = PoolVector2Array( 1317.87, 399.043, 1356, 399, 1390.02, 372.4, 1372.28, 320.298, 1348.62, 308.457, 1264.64, 277.669, 1145.77, 270.565, 1042.87, 298.392, 955.346, 365.887, 900, 502, 900.938, 622.844, 955.346, 758.427, 1055, 831, 1211.42, 835.396, 1324.37, 786.254, 1376.42, 697.444, 1374.05, 603.898, 1339.75, 543.507, 1249.86, 489.629, 1127.44, 484.893, 1023.95, 528.705, 1048.79, 438.119, 1131.58, 380.097, 1176.53, 371.216, 1217.92, 377.136, 1286, 391, 1290, 409, 1171.2, 391.938, 1089, 428, 1065, 469, 1184.21, 438.119, 1311.36, 470.683, 1387, 523, 1413, 656, 1382, 767, 1286, 861, 1025, 864, 942.927, 770.268, 901, 726, 852, 505, 957, 302, 1124, 239, 1292, 239, 1392, 278, 1436, 309, 1425, 369, 1407, 403, 1375, 423, 1339, 421, 1300, 415, 1291.85, 397.267 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1297, 327 )
-rotation = 3.48617
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 1384, 187 )
+rotation = 3.60131
+scale = Vector2( 0.4, 0.4 )
 _isFirstCheckPoint = true
-_isDrawEnabled = false
 _nextCheckPoint = NodePath("../CheckPoint1")
 _currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1164, 311 )
+position = Vector2( 1196, 165 )
 rotation = 3.049
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint2")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1033, 354 )
+position = Vector2( 996, 231 )
 rotation = 2.38667
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint3")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 970, 462 )
+position = Vector2( 881, 381 )
 rotation = 1.83951
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint4")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 955, 584 )
+position = Vector2( 837, 576 )
 rotation = 1.4896
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint5")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 978, 686 )
+position = Vector2( 877, 755 )
 rotation = 1.01567
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint6")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1082, 783 )
+position = Vector2( 1037, 921 )
 rotation = 0.237297
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint7")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1235, 780 )
+position = Vector2( 1289, 915 )
 rotation = -0.453786
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint8")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1330, 675 )
+position = Vector2( 1428, 762 )
 rotation = 4.80014
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint9")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1287, 564 )
+position = Vector2( 1374, 582 )
 rotation = 3.7589
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint10")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1178, 525 )
+position = Vector2( 1200, 511 )
 rotation = 3.15028
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint11")
+_currentCheckPoint = NodePath(".")
 
 [node name="CheckPoint11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1047, 561 )
+position = Vector2( 1007, 559 )
 rotation = 2.72537
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.4, 0.4 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint")
+_currentCheckPoint = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -1171, -530 )
@@ -127,7 +136,7 @@ offset = Vector2( 2340, 1080 )
 current = true
 
 [node name="HandDot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1372, 358 )
+position = Vector2( 1522, 222 )
 
 [node name="Six" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

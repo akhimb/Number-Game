@@ -5,6 +5,7 @@ public class Global : Node
 {
     private int _lapCounter = 0;
     public int MaxLaps { get; set; }
+    public int DrawWidth { get; set; }
     private CustomSignals _cs;
 
     public override void _Ready()
@@ -12,6 +13,7 @@ public class Global : Node
         _cs = GetNode<CustomSignals>("/root/CS");
         _cs.Connect("gameOver", this, "CallGameOver");
         _cs.Connect("changeLevel", this, "CallNextLevel");
+        this.DrawWidth = 50;
     }
 
     public int LapCounter

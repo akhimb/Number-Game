@@ -45,11 +45,11 @@ __meta__ = {
 }
 
 [node name="GoNextButton" type="Button" parent="."]
-margin_left = 929.0
-margin_top = 934.0
-margin_right = 993.0
-margin_bottom = 954.0
-rect_scale = Vector2( 5, 5 )
+margin_left = 2016.0
+margin_top = 961.0
+margin_right = 2080.0
+margin_bottom = 981.0
+rect_scale = Vector2( 4, 4 )
 text = "Go Next"
 __meta__ = {
 "_edit_use_anchors_": false

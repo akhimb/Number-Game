@@ -10,11 +10,11 @@ public class Level_2 : Node2D
     private int _counter = 0;
     private bool isDrawable = false;
     private CustomSignals _cs;
-       private AudioStreamPlayer _Two;
+    private AudioStreamPlayer _Two;
     public override void _Ready()
     {
         GLOBAL = GetNode<Global>("/root/Global");
-        GLOBAL.MaxLaps = 12;
+        GLOBAL.MaxLaps = 13;
         this.SetProcess(true);
         _vectorArry = new List<Vector2>();
         _cs = GetNode<CustomSignals>("/root/CS");
@@ -25,15 +25,20 @@ public class Level_2 : Node2D
     }
     public override void _Draw()
     {
-        if (this._vectorArry != null && this._vectorArry.Count > 0)
+        if (this._vectorArry != null && this._vectorArry.Count > 2)
         {
-            foreach (var item in this._vectorArry)
-            {
-                DrawCircle(new Vector2(item.x, item.y), 15f, new Color(1, 1, 1));
-            }
-            this._counter = 0;
+                DrawPolyline(this._vectorArry.ToArray(), new Color(1, 1, 1), GLOBAL.DrawWidth);
         }
 
+    }
+
+       public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent is InputEventScreenDrag dragEvent && this.isDrawable)
+        {
+                this._vectorArry.Add(dragEvent.Position);
+                Update();
+        }
     }
 
     public void WriteStarted()
@@ -50,17 +55,6 @@ public class Level_2 : Node2D
     {
     }
 
-    public override void _Input(InputEvent inputEvent)
-    {
-        if (inputEvent is InputEventScreenDrag dragEvent && this.isDrawable)
-        {
-            while (_counter < 5)
-            {
-                this._vectorArry.Add(dragEvent.Position);
-                _counter++;
-            }
-            Update();
-        }
-    }
+ 
 
 }
