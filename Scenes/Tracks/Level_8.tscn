@@ -13,12 +13,6 @@ anchor_bottom = 0.0
 margin_right = 2340.0
 margin_bottom = 1080.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -1171, -530 )
-scale = Vector2( 2, 2 )
-offset = Vector2( 2340, 1080 )
-current = true
-
 [node name="GoNextButton" type="Button" parent="."]
 margin_left = 1011.0
 margin_top = 868.0

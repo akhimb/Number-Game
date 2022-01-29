@@ -24,11 +24,14 @@ public class Level_1 : Node2D
 
     public override void _Draw()
     {
-        if (this._vectorArry != null && this._vectorArry.Count > 2)
+        if (this._vectorArry != null && this._vectorArry.Count > 0)
         {
-                DrawPolyline(this._vectorArry.ToArray(), new Color(1, 1, 1), GLOBAL.DrawWidth);
+            for (int i = 0; i < this._vectorArry.Count; i++)
+            {
+                DrawCircle(this._vectorArry[i],GLOBAL.DrawWidth,GLOBAL.ChalkColor);
+            }
+            
         }
-
     }
 
        public override void _Input(InputEvent inputEvent)

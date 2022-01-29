@@ -10,5 +10,6 @@ public class CustomSignals : Node
     [Signal] public delegate void changeLevel();
     [Signal] public delegate void enableChalk();
     [Signal] public delegate void disableChalk();
+    [Signal] public delegate void callPreviousLevel();
 
 }

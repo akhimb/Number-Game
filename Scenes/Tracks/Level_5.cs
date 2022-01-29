@@ -1,9 +1,8 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 public class Level_5 : Node2D
 {
-    private AudioStreamPlayer _Four;
+    private AudioStreamPlayer _Three;
     private Global GLOBAL;
     private List<Vector2> _vectorArry;
     private int _counter = 0;
@@ -12,22 +11,26 @@ public class Level_5 : Node2D
     public override void _Ready()
     {
         GLOBAL = GetNode<Global>("/root/Global");
-        GLOBAL.MaxLaps = 9;
-        _Four = GetNode<AudioStreamPlayer>("Four");
-        _Four.Play();
+        GLOBAL.MaxLaps = 14;
+        _Three = GetNode<AudioStreamPlayer>("Three");
+        _Three.Play();
         _cs = GetNode<CustomSignals>("/root/CS");
         _cs.Connect("enableChalk", this, "WriteStarted");
         _cs.Connect("disableChalk", this, "WriteEnd");
         this.SetProcess(true);
         _vectorArry = new List<Vector2>();
     }
+
     public override void _Draw()
     {
-        if (this._vectorArry != null && this._vectorArry.Count > 2)
+        if (this._vectorArry != null && this._vectorArry.Count > 0)
         {
-                DrawPolyline(this._vectorArry.ToArray(), new Color(1, 1, 1), GLOBAL.DrawWidth);
+            for (int i = 0; i < this._vectorArry.Count; i++)
+            {
+                DrawCircle(this._vectorArry[i],GLOBAL.DrawWidth,GLOBAL.ChalkColor);
+            }
+            
         }
-
     }
 
        public override void _Input(InputEvent inputEvent)

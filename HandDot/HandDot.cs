@@ -13,6 +13,7 @@ public class HandDot : KinematicBody2D
         _cs = GetNode<CustomSignals>("/root/CS");
         _cs.Connect("raceOver", this, "ToggleInput");
         GLOBAL = GetNode<Global>("/root/Global");
+        GetNode<Sprite>("Chalk").Modulate = new Color(1,0,0,0.5f);
     }
 
     public void ToggleInput()

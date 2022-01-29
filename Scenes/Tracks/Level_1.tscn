@@ -17,7 +17,7 @@ texture = ExtResource( 5 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 1057, 46, 1060, 1023, 1343, 1020, 1337, 27, 1089, 29, 1089, 5, 1369, 8, 1369, 1047, 1030, 1052, 1033, 0, 1086, 8, 1089, 32 )
+polygon = PoolVector2Array( 1053, 49, 1051, 1023, 1321, 1019, 1313, 31, 1089, 29, 1089, 5, 1313, 7, 1369, 8, 1369, 1047, 1030, 1052, 1033, 0, 1086, 8, 1089, 32 )
 
 [node name="GameUI" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -28,7 +28,7 @@ margin_bottom = 1080.0
 [node name="CheckPoint1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1181, 231 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 _isFirstCheckPoint = true
 _nextCheckPoint = NodePath("../CheckPoint2")
 _currentCheckPoint = NodePath(".")
@@ -36,7 +36,7 @@ _currentCheckPoint = NodePath(".")
 [node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1186, 436 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint3")
 _currentCheckPoint = NodePath(".")
@@ -44,7 +44,7 @@ _currentCheckPoint = NodePath(".")
 [node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1184, 668 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 _isActive = false
 _nextCheckPoint = NodePath("../CheckPoint4")
 _currentCheckPoint = NodePath(".")
@@ -52,9 +52,8 @@ _currentCheckPoint = NodePath(".")
 [node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1185, 916 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 _isActive = false
-_isDrawEnabled = false
 _nextCheckPoint = NodePath("../CheckPoint1")
 _currentCheckPoint = NodePath(".")
 

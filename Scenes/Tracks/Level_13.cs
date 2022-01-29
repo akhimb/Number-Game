@@ -1,22 +1,22 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
 public class Level_13 : Node2D
 {
 
     private Global GLOBAL;
-    private AudioStreamPlayer _Zero;
+    private AudioStreamPlayer _Seven;
     private List<Vector2> _vectorArry;
     private int _counter = 0;
     private bool isDrawable = false;
     private CustomSignals _cs;
+
     public override void _Ready()
     {
         GLOBAL = GetNode<Global>("/root/Global");
-        GLOBAL.MaxLaps = 9;
-        _Zero = GetNode<AudioStreamPlayer>("Zero");
-        _Zero.Play();
+        GLOBAL.MaxLaps = 8;
+        _Seven = GetNode<AudioStreamPlayer>("Seven");
+        _Seven.Play();
         _cs = GetNode<CustomSignals>("/root/CS");
         _cs.Connect("enableChalk", this, "WriteStarted");
         _cs.Connect("disableChalk", this, "WriteEnd");
@@ -24,13 +24,16 @@ public class Level_13 : Node2D
         _vectorArry = new List<Vector2>();
     }
 
-    public override void _Draw()
+        public override void _Draw()
     {
-        if (this._vectorArry != null && this._vectorArry.Count > 2)
+        if (this._vectorArry != null && this._vectorArry.Count > 0)
         {
-                DrawPolyline(this._vectorArry.ToArray(), new Color(1, 1, 1), GLOBAL.DrawWidth);
+            for (int i = 0; i < this._vectorArry.Count; i++)
+            {
+                DrawCircle(this._vectorArry[i],GLOBAL.DrawWidth,GLOBAL.ChalkColor);
+            }
+            
         }
-
     }
 
        public override void _Input(InputEvent inputEvent)
@@ -55,4 +58,5 @@ public class Level_13 : Node2D
     public override void _Process(float delta)
     {
     }
+
 }

@@ -5,7 +5,7 @@ public class Level_11 : Node2D
 {
 
     private Global GLOBAL;
-    private AudioStreamPlayer _Nine;
+    private AudioStreamPlayer _Six;
     private List<Vector2> _vectorArry;
     private int _counter = 0;
     private bool isDrawable = false;
@@ -14,8 +14,8 @@ public class Level_11 : Node2D
     {
         GLOBAL = GetNode<Global>("/root/Global");
         GLOBAL.MaxLaps = 12;
-        _Nine = GetNode<AudioStreamPlayer>("Nine");
-        _Nine.Play();
+        _Six = GetNode<AudioStreamPlayer>("Six");
+        _Six.Play();
         _cs = GetNode<CustomSignals>("/root/CS");
         _cs.Connect("enableChalk", this, "WriteStarted");
         _cs.Connect("disableChalk", this, "WriteEnd");
@@ -25,11 +25,14 @@ public class Level_11 : Node2D
 
     public override void _Draw()
     {
-        if (this._vectorArry != null && this._vectorArry.Count > 2)
+        if (this._vectorArry != null && this._vectorArry.Count > 0)
         {
-                DrawPolyline(this._vectorArry.ToArray(), new Color(1, 1, 1), GLOBAL.DrawWidth);
+            for (int i = 0; i < this._vectorArry.Count; i++)
+            {
+                DrawCircle(this._vectorArry[i],GLOBAL.DrawWidth,GLOBAL.ChalkColor);
+            }
+            
         }
-
     }
 
        public override void _Input(InputEvent inputEvent)
@@ -54,4 +57,5 @@ public class Level_11 : Node2D
     public override void _Process(float delta)
     {
     }
+
 }

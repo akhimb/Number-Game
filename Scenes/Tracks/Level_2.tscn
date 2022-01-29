@@ -1,155 +1,189 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Templates/2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Music/Two.wav" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/Tracks/Level_2.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/Tracks/Level_2.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Templates/Level2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Level1/ItsOkay.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Images/Level1/One-Finger-Sound.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=9]
 
 [node name="Level_2" type="Node2D"]
-position = Vector2( -11, -62 )
-script = ExtResource( 7 )
+position = Vector2( 62, 202 )
+script = ExtResource( 1 )
 
-[node name="2" type="Sprite" parent="."]
-position = Vector2( 1193, 603 )
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Level2" type="Sprite" parent="Sprite"]
+position = Vector2( 1111, 342 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CheckPoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 815, 268 )
-rotation = -0.534223
-scale = Vector2( 0.4, 0.4 )
-_isFirstCheckPoint = true
-_nextCheckPoint = NodePath("../CheckPoint2")
-_currentCheckPoint = NodePath(".")
+[node name="One-Fish-Sound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+volume_db = 8.0
 
-[node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1003, 216 )
-rotation = -0.165861
-scale = Vector2( 0.4, 0.4 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint3")
-_currentCheckPoint = NodePath(".")
+[node name="One-Finger-Sound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = 8.0
 
-[node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1210, 223 )
-rotation = 0.299808
-scale = Vector2( 0.4, 0.4 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint4")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1371, 354 )
-rotation = 1.59756
-scale = Vector2( 0.4, 0.4 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint5")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1308, 535 )
-rotation = 2.35325
-scale = Vector2( 0.4, 0.4 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint6")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1193, 644 )
-rotation = 2.47511
-scale = Vector2( 0.4, 0.4 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint7")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1069, 737 )
-rotation = 2.47331
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint8")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 908, 864 )
-rotation = 2.45962
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint9")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 784, 969 )
-rotation = -0.00092496
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint10")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1055, 966 )
-rotation = 0.00150386
-scale = Vector2( 0.319995, 0.319995 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint11")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1204, 967 )
-rotation = -0.000609085
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint12")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1351, 968 )
-rotation = -0.00210111
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint13")
-_currentCheckPoint = NodePath(".")
-
-[node name="CheckPoint13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1470, 966 )
-rotation = -0.00210111
-scale = Vector2( 0.35, 0.35 )
-_isActive = false
-_nextCheckPoint = NodePath("../CheckPoint")
-_currentCheckPoint = NodePath(".")
-
-[node name="HandDot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 692, 341 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( -1127.88, -375.928 )
-rotation = 0.004608
-scale = Vector2( 1.9331, 1.6101 )
-polygon = PoolVector2Array( 905.023, 436.834, 910.861, 401.807, 992.529, 329.43, 1161.39, 299.652, 1297.55, 333.024, 1357.94, 417.747, 1358.43, 524.746, 1295.82, 610.035, 1208.25, 702.44, 1119.55, 767.849, 1119.61, 781.849, 1306.59, 776.988, 1389.61, 779.605, 1411.65, 789.503, 1422.8, 821.453, 1407.05, 875.526, 1389.07, 880.609, 932.091, 885.714, 931.695, 799.715, 1206.55, 550.446, 1238.35, 507.299, 1231.06, 443.332, 1206.8, 428.488, 1175.9, 409.586, 1101.9, 408.927, 1036.01, 434.231, 979.169, 468.493, 1117.02, 436.857, 1192.15, 463.512, 1173.48, 536.598, 1003.27, 706.384, 910.732, 807.812, 922.147, 897.76, 1407.14, 895.525, 1458.82, 825.287, 1408.54, 764.518, 1147.55, 768.72, 1399.51, 541.557, 1376.93, 414.66, 1325.51, 323.896, 1101.29, 276.928, 896.7, 366.872, 857.235, 483.055, 979.169, 468.493, 927.128, 459.733 )
-one_way_collision = true
+[node name="CheckBoxOne" type="CheckBox" parent="."]
+margin_left = 1955.0
+margin_top = 50.0
+margin_right = 1979.0
+margin_bottom = 74.0
+rect_scale = Vector2( 4, 4 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
-[node name="GameUI" parent="." instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 19.0
-margin_top = 57.0
-margin_right = 2359.0
-margin_bottom = 1136.0
+[node name="CheckBoxTwo" type="CheckBox" parent="."]
+margin_left = 1956.0
+margin_top = 153.0
+margin_right = 1980.0
+margin_bottom = 177.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -176, -168 )
-scale = Vector2( 2, 2 )
-offset = Vector2( 1366, 768 )
-current = true
+[node name="CheckBoxThree" type="CheckBox" parent="."]
+margin_left = 1958.0
+margin_top = 245.0
+margin_right = 1982.0
+margin_bottom = 269.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Two" type="AudioStreamPlayer" parent="."]
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 1714.0
+margin_top = 414.0
+margin_right = 1859.0
+margin_bottom = 443.0
+rect_scale = Vector2( 3.5, 3.5 )
+text = "SUBMIT ANSWERS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelResult" type="Label" parent="."]
+margin_left = 1718.0
+margin_top = 543.0
+margin_right = 1758.0
+margin_bottom = 557.0
+rect_scale = Vector2( 2.5, 2.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoNextButton" type="Button" parent="."]
+margin_left = 1721.0
+margin_top = 622.0
+margin_right = 1866.0
+margin_bottom = 652.0
+rect_scale = Vector2( 3.5, 3.5 )
+text = "Go to Next Level"
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxBirds" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 729.0
+margin_top = 749.0
+margin_right = 753.0
+margin_bottom = 773.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxKitten" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 279.0
+margin_top = 745.0
+margin_right = 303.0
+margin_bottom = 769.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxElephant" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 1478.0
+margin_top = 748.0
+margin_right = 1502.0
+margin_bottom = 772.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxBalls" type="CheckBox" parent="."]
+modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
+margin_left = 1089.0
+margin_top = 748.0
+margin_right = 1113.0
+margin_bottom = 772.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WonMatch" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+volume_db = 15.0
+
+[node name="Okay" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 5 )
+volume_db = 15.0
+
+[node name="GameUI" parent="." instance=ExtResource( 9 )]
+margin_left = -51.0
+margin_top = -200.0
+margin_right = -51.0
+margin_bottom = -200.0
+
+[node name="FishButton" type="Button" parent="."]
+margin_left = 322.0
+margin_top = 273.0
+margin_right = 430.0
+margin_bottom = 369.0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FingerButton" type="Button" parent="."]
+margin_left = 820.0
+margin_top = 285.0
+margin_right = 926.0
+margin_bottom = 388.0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="CheckBoxOne" to="." method="_on_CheckBoxOne_toggled"]
+[connection signal="toggled" from="CheckBoxTwo" to="." method="_on_CheckBoxTwo_toggled"]
+[connection signal="toggled" from="CheckBoxThree" to="." method="_on_CheckBoxThree_toggled"]
+[connection signal="pressed" from="SubmitButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="GoNextButton" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="FishButton" to="." method="_on_FishButton_pressed"]
+[connection signal="pressed" from="FingerButton" to="." method="_on_FingerButton_pressed"]

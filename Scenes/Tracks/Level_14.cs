@@ -11,7 +11,7 @@ public class Level_14 : Node2D
 
     public void _on_GoNextButton_pressed()
     {
-        _cs.EmitSignal("gameOver");
+        _cs.EmitSignal("changeLevel");
     }
 
 }

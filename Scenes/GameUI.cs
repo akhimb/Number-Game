@@ -30,7 +30,7 @@ public class GameUI : Control
     //we have to make sure that the lapcounter in global is updated before this is called
     public void UpdateLapCounter()
     {
-        lblLapCounter.Text = String.Format("Points : {0} / {1}", _global.LapCounter.ToString(), _global.MaxLaps);
+        lblLapCounter.Text = String.Format("{0} / {1}", _global.LapCounter.ToString(), _global.MaxLaps);
         if (_global.LapCounter >= _global.MaxLaps)
         {
             _WonSound.Play();
@@ -44,11 +44,24 @@ public class GameUI : Control
         _cs.EmitSignal("gameOver");
     }
 
-        public void _on_GoNextButton_pressed()
+    public void _on_GoNextButton_pressed()
     {
-            _cs.EmitSignal("changeLevel");
-            _GoNextButton.Visible = false;
+        _cs.EmitSignal("changeLevel");
+        _GoNextButton.Visible = false;
+    }
+
+    public void _on_PreviousLevelButton_pressed()
+    {
+        _cs.EmitSignal("callPreviousLevel");
+    }
+
+    public void _on_NextLevelButton_pressed()
+    {
+        _cs.EmitSignal("changeLevel");
     }
 
 }
+
+
+
 

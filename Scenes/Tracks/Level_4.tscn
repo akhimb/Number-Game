@@ -1,189 +1,28 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Templates/Level4.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Images/Level1/One-Finger-Sound.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=9]
-[ext_resource path="res://Scenes/Tracks/Level_4.cs" type="Script" id=10]
-[ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=14]
-[ext_resource path="res://Assets/Images/Level1/ItsOkay.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Tracks/Level_4.cs" type="Script" id=3]
 
 [node name="Level_4" type="Node2D"]
-position = Vector2( 62, 202 )
-script = ExtResource( 10 )
+script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-
-[node name="Level4" type="Sprite" parent="Sprite"]
-position = Vector2( 1111, 342 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="One-Fish-Sound" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 9 )
-volume_db = 8.0
-
-[node name="One-Finger-Sound" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 8 )
-volume_db = 8.0
-
-[node name="CheckBoxOne" type="CheckBox" parent="."]
-margin_left = 1955.0
-margin_top = 50.0
-margin_right = 1979.0
-margin_bottom = 74.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBoxTwo" type="CheckBox" parent="."]
-margin_left = 1956.0
-margin_top = 153.0
-margin_right = 1980.0
-margin_bottom = 177.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBoxThree" type="CheckBox" parent="."]
-margin_left = 1958.0
-margin_top = 245.0
-margin_right = 1982.0
-margin_bottom = 269.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SubmitButton" type="Button" parent="."]
-margin_left = 1714.0
-margin_top = 414.0
-margin_right = 1859.0
-margin_bottom = 443.0
-rect_scale = Vector2( 3.5, 3.5 )
-text = "SUBMIT ANSWERS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LabelResult" type="Label" parent="."]
-margin_left = 1718.0
-margin_top = 543.0
-margin_right = 1758.0
-margin_bottom = 557.0
-rect_scale = Vector2( 2.5, 2.5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GameUI" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 2340.0
+margin_bottom = 1080.0
 
 [node name="GoNextButton" type="Button" parent="."]
-margin_left = 1721.0
-margin_top = 622.0
-margin_right = 1866.0
-margin_bottom = 652.0
-rect_scale = Vector2( 3.5, 3.5 )
+margin_left = 1011.0
+margin_top = 868.0
+margin_right = 1156.0
+margin_bottom = 898.0
+rect_scale = Vector2( 2, 2 )
 text = "Go to Next Level"
-icon = ExtResource( 13 )
+icon = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBoxBirds" type="CheckBox" parent="."]
-modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 729.0
-margin_top = 749.0
-margin_right = 753.0
-margin_bottom = 773.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBoxKitten" type="CheckBox" parent="."]
-modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 279.0
-margin_top = 745.0
-margin_right = 303.0
-margin_bottom = 769.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBoxElephant" type="CheckBox" parent="."]
-modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 1478.0
-margin_top = 748.0
-margin_right = 1502.0
-margin_bottom = 772.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBoxBalls" type="CheckBox" parent="."]
-modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 1089.0
-margin_top = 748.0
-margin_right = 1113.0
-margin_bottom = 772.0
-rect_scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WonMatch" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 14 )
-volume_db = 15.0
-
-[node name="Okay" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 16 )
-volume_db = 15.0
-
-[node name="GameUI" parent="." instance=ExtResource( 12 )]
-margin_left = -51.0
-margin_top = -200.0
-margin_right = -51.0
-margin_bottom = -200.0
-
-[node name="FishButton" type="Button" parent="."]
-margin_left = 322.0
-margin_top = 273.0
-margin_right = 430.0
-margin_bottom = 369.0
-icon = ExtResource( 11 )
-flat = true
-expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FingerButton" type="Button" parent="."]
-margin_left = 820.0
-margin_top = 285.0
-margin_right = 926.0
-margin_bottom = 388.0
-icon = ExtResource( 11 )
-flat = true
-expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="toggled" from="CheckBoxOne" to="." method="_on_CheckBoxOne_toggled"]
-[connection signal="toggled" from="CheckBoxTwo" to="." method="_on_CheckBoxTwo_toggled"]
-[connection signal="toggled" from="CheckBoxThree" to="." method="_on_CheckBoxThree_toggled"]
-[connection signal="pressed" from="SubmitButton" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="GoNextButton" to="." method="_on_NextLevel_pressed"]
-[connection signal="pressed" from="FishButton" to="." method="_on_FishButton_pressed"]
-[connection signal="pressed" from="FingerButton" to="." method="_on_FingerButton_pressed"]
+[connection signal="pressed" from="GoNextButton" to="." method="_on_GoNextButton_pressed"]
