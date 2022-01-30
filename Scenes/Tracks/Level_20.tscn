@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Tracks/Level_20.cs" type="Script" id=3]
+[ext_resource path="res://Assets/Templates/Bear.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Templates/Number 0 - Snake.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Templates/One-Giraffe.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Templates/Number 3 - Sea Horse.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Templates/Number 4 -Crocodile.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Templates/Number 5 - Dragon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Templates/Number 2 - Duck.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Templates/Number 6- Bird.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Templates/Number 7 -Cukoo.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Templates/Number 9 - Gecko.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Templates/Number 8 - Octopus.png" type="Texture" id=15]
+[ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=16]
 
 [node name="Level_20" type="Node2D"]
 script = ExtResource( 3 )
@@ -13,16 +26,175 @@ anchor_bottom = 0.0
 margin_right = 2340.0
 margin_bottom = 1080.0
 
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TeddyBear" type="Sprite" parent="Sprite"]
+position = Vector2( 1128, 531 )
+scale = Vector2( 1.48156, 1.48156 )
+texture = ExtResource( 4 )
+
 [node name="GoNextButton" type="Button" parent="."]
-margin_left = 1011.0
-margin_top = 868.0
-margin_right = 1156.0
-margin_bottom = 898.0
+margin_left = 1656.0
+margin_top = 973.0
+margin_right = 1801.0
+margin_bottom = 1003.0
 rect_scale = Vector2( 2, 2 )
 text = "Home"
 icon = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Checkpoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1300, 265 )
+rotation = -4.79158
+scale = Vector2( 0.2, 0.2 )
+_isFirstCheckPoint = true
+_nextCheckPoint = NodePath("../Checkpoint1")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number0-Snake" type="Sprite" parent="Checkpoint"]
+position = Vector2( -15.3525, -312.193 )
+rotation = 1.57723
+scale = Vector2( -0.512128, -0.512128 )
+texture = ExtResource( 6 )
+
+[node name="Checkpoint1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1266, 489 )
+rotation = 1.22219
+scale = Vector2( 0.2, 0.2 )
+_isActive = false
+_nextCheckPoint = NodePath("../Checkpoint2")
+_currentCheckPoint = NodePath(".")
+
+[node name="One-Giraffe" type="Sprite" parent="Checkpoint1"]
+position = Vector2( 68.2891, -363.54 )
+rotation = -1.10256
+scale = Vector2( 0.437983, 0.437983 )
+texture = ExtResource( 7 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1338, 604 )
+rotation = -4.92018
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint3")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number2-Duck" type="Sprite" parent="Checkpoint2"]
+position = Vector2( -7.21289, -313.066 )
+rotation = 4.76169
+scale = Vector2( 0.391525, 0.368145 )
+texture = ExtResource( 11 )
+
+[node name="Checkpoint3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1325, 758 )
+rotation = -3.68242
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint4")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number3-SeaHorse" type="Sprite" parent="Checkpoint3"]
+position = Vector2( -29.874, -338.723 )
+rotation = -3.10097
+scale = Vector2( 0.466159, 0.466159 )
+texture = ExtResource( 8 )
+
+[node name="Checkpoint4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1115, 814 )
+rotation = -2.84063
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint5")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number4-Crocodile" type="Sprite" parent="Checkpoint4"]
+position = Vector2( -23.4561, -350.499 )
+rotation = 2.86883
+scale = Vector2( 0.537736, 0.537736 )
+texture = ExtResource( 9 )
+
+[node name="Checkpoint5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 954, 751 )
+rotation = 4.5469
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint6")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number5-Dragon" type="Sprite" parent="Checkpoint5"]
+position = Vector2( -37.6816, -381.418 )
+rotation = -4.74483
+scale = Vector2( 0.529675, 0.529675 )
+texture = ExtResource( 10 )
+
+[node name="Checkpoint6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 931, 595 )
+rotation = 4.95214
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint7")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number6-Bird" type="Sprite" parent="Checkpoint6"]
+position = Vector2( -92.502, -399.461 )
+rotation = -4.89049
+scale = Vector2( 0.599905, 0.599905 )
+texture = ExtResource( 12 )
+
+[node name="Checkpoint7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 976, 486 )
+rotation = -1.67865
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint8")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number7-Cukoo" type="Sprite" parent="Checkpoint7"]
+position = Vector2( 68.7227, -301.082 )
+rotation = -4.74303
+scale = Vector2( 0.503173, 0.481402 )
+texture = ExtResource( 13 )
+
+[node name="Checkpoint8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 959, 278 )
+rotation = -0.716058
+scale = Vector2( 0.2, 0.2 )
+_nextCheckPoint = NodePath("../Checkpoint9")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number8-Octopus" type="Sprite" parent="Checkpoint8"]
+position = Vector2( -83.2314, -330.905 )
+rotation = 0.750106
+scale = Vector2( 0.416837, 0.416837 )
+texture = ExtResource( 15 )
+
+[node name="Checkpoint9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1128, 194 )
+rotation = 0.262095
+scale = Vector2( 0.2, 0.2 )
+_isLastCheckPoint = true
+_nextCheckPoint = NodePath("../Checkpoint")
+_currentCheckPoint = NodePath(".")
+
+[node name="Number9-Gecko" type="Sprite" parent="Checkpoint9"]
+position = Vector2( 41.7036, -326.972 )
+rotation = -6.93048
+scale = Vector2( 0.56662, 0.56662 )
+texture = ExtResource( 14 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+scale = Vector2( 0.95078, 1.76336 )
+polygon = PoolVector2Array( 945.539, 111.152, 869.812, 155.386, 958.16, 220.602, 885.589, 265.97, 823.534, 349.901, 869.812, 451.979, 1091.73, 517.196, 1275.79, 520.031, 1353.63, 490.542, 1553.46, 481.468, 1508.24, 377.122, 1522.96, 308.503, 1427.25, 212.663, 1555.56, 117.39, 1290.52, 52.7404, 970.782, 81.6625, 924.504, 107.182, 899.261, -14.1775, 2555.8, -14.7446, 2456.93, 509.256, 1762.76, 521.733, 1675.47, 579.01, -61.0025, 637.421, -58.899, -89.6019, 858.243, -23.2511, 907.676, 113.987 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 1126, 276, 1000, 324, 1034, 493, 977, 611, 1001, 746, 1139, 771, 1297, 720, 1298, 618, 1217, 486, 1295, 344 )
+
+[node name="HandDot" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1280, 209 )
+scale = Vector2( 0.94169, 0.94169 )
 
 [connection signal="pressed" from="GoNextButton" to="." method="_on_GoNextButton_pressed"]
