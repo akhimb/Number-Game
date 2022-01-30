@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/Three.wav-bb90c50b039e5cb188eefb8d411b93b7.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Three.wav"
+dest_files=[ "res://import/Three.wav-bb90c50b039e5cb188eefb8d411b93b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

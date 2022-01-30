@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/FiveFingers.wav-1ca9fc6923d5bdd8f966f6cd74f01d78.sample"
+
+[deps]
+
+source_file="res://Assets/Music/FiveFingers.wav"
+dest_files=[ "res://import/FiveFingers.wav-1ca9fc6923d5bdd8f966f6cd74f01d78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
