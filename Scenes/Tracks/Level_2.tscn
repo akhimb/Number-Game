@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Tracks/Level_2.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Templates/Level2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Templates/Level1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Level1/ItsOkay.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Images/Level1/One-Finger-Sound.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=7]
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-[node name="Level2" type="Sprite" parent="Sprite"]
+[node name="Level1" type="Sprite" parent="Sprite"]
 position = Vector2( 1111, 342 )
 texture = ExtResource( 4 )
 __meta__ = {

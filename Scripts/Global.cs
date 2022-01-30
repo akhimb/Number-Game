@@ -45,12 +45,14 @@ public class Global : Node
 
     public void CallNextLevel()
     {
+        _lapCounter = 0;
         GetTree().ChangeScene($"res://Scenes/Tracks/Level_{Convert.ToInt32(GetTree().CurrentScene.Name.Split('_')[1]) + 1 }.tscn");
         GetTree().CurrentScene._Ready();
     }
 
     public void CallPreviousLevel()
     {
+        _lapCounter = 0;
         GetTree().ChangeScene($"res://Scenes/Tracks/Level_{Convert.ToInt32(GetTree().CurrentScene.Name.Split('_')[1]) - 1 }.tscn");
         GetTree().CurrentScene._Ready();
     }

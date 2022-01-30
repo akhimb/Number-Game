@@ -37,11 +37,11 @@ public class Level_2 : Node2D
     {
         _FishSound.Play();
     }
+
     public void _on_NextLevel_pressed()
     {
         _cs.EmitSignal("changeLevel");
     }
-
 
     public void _on_FingerButton_pressed()
     {

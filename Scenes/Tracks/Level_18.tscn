@@ -1,11 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Images/Level1/Replay.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Tracks/Level_18.cs" type="Script" id=3]
+[ext_resource path="res://Assets/Templates/Level9.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Music/NineGeckos.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Music/NineFingers.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Level1/ItsOkay.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=9]
 
 [node name="Level_18" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1170, 540 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GameUI" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -13,16 +26,162 @@ anchor_bottom = 0.0
 margin_right = 2340.0
 margin_bottom = 1080.0
 
+[node name="NineGeckosSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+volume_db = 8.0
+
+[node name="NineFingersSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = 8.0
+
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 1735.0
+margin_top = 603.0
+margin_right = 1880.0
+margin_bottom = 632.0
+rect_scale = Vector2( 3.5, 3.5 )
+text = "SUBMIT ANSWERS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GoNextButton" type="Button" parent="."]
-margin_left = 1011.0
-margin_top = 868.0
-margin_right = 1156.0
-margin_bottom = 898.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 1742.0
+margin_top = 811.0
+margin_right = 1887.0
+margin_bottom = 841.0
+rect_scale = Vector2( 3.5, 3.5 )
 text = "Go to Next Level"
 icon = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NineFingersButton" type="Button" parent="."]
+margin_left = 1957.0
+margin_top = 354.0
+margin_right = 2063.0
+margin_bottom = 457.0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NineGeckosButton" type="Button" parent="."]
+margin_left = 1372.0
+margin_top = 318.0
+margin_right = 1480.0
+margin_bottom = 414.0
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxNine" type="CheckBox" parent="."]
+margin_left = 712.0
+margin_top = 658.0
+margin_right = 736.0
+margin_bottom = 682.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxZero" type="CheckBox" parent="."]
+margin_left = 713.0
+margin_top = 761.0
+margin_right = 737.0
+margin_bottom = 785.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxThree" type="CheckBox" parent="."]
+margin_left = 711.0
+margin_top = 843.0
+margin_right = 735.0
+margin_bottom = 867.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxSeven" type="CheckBox" parent="."]
+margin_left = 710.0
+margin_top = 932.0
+margin_right = 734.0
+margin_bottom = 956.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxSeven2" type="CheckBox" parent="."]
+margin_left = 1008.0
+margin_top = 658.0
+margin_right = 1032.0
+margin_bottom = 682.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxTwo" type="CheckBox" parent="."]
+margin_left = 1009.0
+margin_top = 761.0
+margin_right = 1033.0
+margin_bottom = 785.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxNine2" type="CheckBox" parent="."]
+margin_left = 1007.0
+margin_top = 843.0
+margin_right = 1031.0
+margin_bottom = 867.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxOne" type="CheckBox" parent="."]
+margin_left = 1006.0
+margin_top = 932.0
+margin_right = 1030.0
+margin_bottom = 956.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WonMatch" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+volume_db = 15.0
+
+[node name="Okay" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+volume_db = 15.0
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="pressed" from="GoNextButton" to="." method="_on_GoNextButton_pressed"]
+[connection signal="pressed" from="NineFingersButton" to="." method="_on_NineFingersButton_pressed"]
+[connection signal="pressed" from="NineGeckosButton" to="." method="_on_NineGeckosButton_pressed"]
+[connection signal="toggled" from="CheckBoxNine" to="." method="_on_CheckBoxNine_toggled"]
+[connection signal="toggled" from="CheckBoxZero" to="." method="_on_CheckBoxZero_toggled"]
+[connection signal="toggled" from="CheckBoxThree" to="." method="_on_CheckBoxThree_toggled"]
+[connection signal="toggled" from="CheckBoxSeven" to="." method="_on_CheckBoxSeven_toggled"]
+[connection signal="toggled" from="CheckBoxSeven2" to="." method="_on_CheckBoxSeven2_toggled"]
+[connection signal="toggled" from="CheckBoxTwo" to="." method="_on_CheckBoxTwo_toggled"]
+[connection signal="toggled" from="CheckBoxNine2" to="." method="_on_CheckBoxNine2_toggled"]
+[connection signal="toggled" from="CheckBoxOne" to="." method="_on_CheckBoxOne_toggled"]
