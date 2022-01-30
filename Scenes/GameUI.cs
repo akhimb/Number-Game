@@ -7,9 +7,11 @@ public class GameUI : Control
     private Global _global;
     private CustomSignals _cs;
     private AudioStreamPlayer _WonSound;
+    private Particles2D _Particles;
 
     private Button _GoNextButton;
-
+    Timer _delayTimer;
+    private bool timerActivated = false;
 
     public override void _Ready()
     {
@@ -21,10 +23,22 @@ public class GameUI : Control
         _GoNextButton = GetNode<Button>("GoNextButton");
         _GoNextButton.Visible = false;
         _WonSound = GetNode<AudioStreamPlayer>("Won");
+        _Particles = GetNode<Particles2D>("Particles2D");
+        this._delayTimer = GetNode<Timer>("DelayTimer");
+        this._delayTimer.OneShot = true;
+        this._delayTimer.WaitTime = 1f;
+        this.timerActivated = false;
+
     }
 
     public override void _Process(float delta)
     {
+
+    }
+
+    public void _on_DelayTimer_timeout()
+    {
+        this._Particles.Visible = false;
     }
 
     //we have to make sure that the lapcounter in global is updated before this is called
@@ -35,7 +49,12 @@ public class GameUI : Control
         {
             _WonSound.Play();
             _GoNextButton.Visible = true;
-
+            if (!timerActivated)
+            {
+                this._delayTimer.Start();
+                this.timerActivated = true;
+                this._Particles.Visible = true;
+            }
         }
     }
 
@@ -59,6 +78,8 @@ public class GameUI : Control
     {
         _cs.EmitSignal("changeLevel");
     }
+
+
 
 }
 

@@ -1,9 +1,42 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/GameUI.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Home.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Music/Yes.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Sprites/kenney_racingpack_updated (1)/PNG/Objects/arrow_yellow.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Particles/floaty_64.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.949772 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.177139, 0.244833, 0.964844, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 25.0
+flag_disable_z = true
+gravity = Vector3( -10, -100, 0 )
+initial_velocity = 180.0
+initial_velocity_random = 1.0
+angular_velocity = 132.98
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 270.0
+angle_random = 1.0
+color_ramp = SubResource( 3 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+anim_speed = 1.0
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -86,7 +119,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+material = SubResource( 1 )
+position = Vector2( 736, 894 )
+scale = Vector2( 5, 5 )
+amount = 100
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 1.39
+explosiveness = 0.5
+randomness = 0.15
+process_material = SubResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="GoNextButton" to="." method="_on_GoNextButton_pressed"]
 [connection signal="pressed" from="PreviousLevelButton" to="." method="_on_PreviousLevelButton_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_DelayTimer_timeout"]
