@@ -18,4 +18,17 @@ public class Level_0 : Node2D
         GetTree().CurrentScene._Ready();
     }
 
+    public void _on_InfoButton_pressed()
+    {
+        GetTree().ChangeScene($"res://Scenes/Info.tscn");
+        GetTree().CurrentScene._Ready();
+    }
+
+    public void _on_VideoPlayer_finished()
+    {
+        GetNode<VideoPlayer>("VideoPlayer").Visible = false;
+    }
 }
+
+
+

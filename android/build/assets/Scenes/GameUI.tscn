@@ -1,12 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/GameUI.cs" type="Script" id=1]
-[ext_resource path="res://Assets/Music/Yes.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Images/Mouse.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Home.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Music/Clap.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sprites/kenney_racingpack_updated (1)/PNG/Objects/arrow_yellow.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Particles/floaty_64.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.949772 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.177139, 0.244833, 0.964844, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 25.0
+flag_disable_z = true
+gravity = Vector3( -10, -100, 0 )
+initial_velocity = 180.0
+initial_velocity_random = 1.0
+angular_velocity = 132.98
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 270.0
+angle_random = 1.0
+color_ramp = SubResource( 5 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+anim_speed = 1.0
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -15,13 +51,13 @@ __meta__ = {
 [node name="lblLapCounter" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -466.0
-margin_top = 245.0
-margin_right = -399.0
-margin_bottom = 263.0
-rect_scale = Vector2( 4, 4 )
+margin_left = -2352.0
+margin_top = 200.0
+margin_right = -2285.0
+margin_bottom = 220.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( -30.25, 57.25 )
-text = "Lap 1/1"
+hint_tooltip = "Level points."
 align = 2
 uppercase = true
 __meta__ = {
@@ -31,49 +67,81 @@ __meta__ = {
 [node name="Won" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="lblInstructions" type="Label" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = -72.0
-margin_top = 95.0
-margin_right = 415.0
-margin_bottom = 113.0
-rect_scale = Vector2( 4, 4 )
-rect_pivot_offset = Vector2( -30.25, 57.25 )
-text = "Click left mouse button to move forward and right button to move backward."
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonNextLevel" type="Button" parent="."]
-modulate = Color( 0.0745098, 1, 0.992157, 1 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -726.0
-margin_top = -188.0
-margin_right = -646.0
-margin_bottom = -168.0
-rect_scale = Vector2( 6.18899, 5.01742 )
-hint_tooltip = "Click to Go to Next Level."
-text = "Next Level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CkBtnUseMouse" type="CheckButton" parent="."]
-margin_right = 76.0
-margin_bottom = 40.0
-rect_scale = Vector2( 4.12, 4.12 )
-hint_tooltip = "Click to choose between keyboard and mouse."
-pressed = true
-icon = ExtResource( 5 )
+[node name="HomeButton" type="Button" parent="."]
+margin_left = 45.0
+margin_top = 45.0
+margin_right = 89.0
+margin_bottom = 83.0
+rect_scale = Vector2( 2.66384, 2.66384 )
+hint_tooltip = "Go to home page."
+icon = ExtResource( 2 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="ButtonNextLevel" to="." method="_on_ButtonNextLevel_pressed"]
-[connection signal="toggled" from="CkBtnUseMouse" to="." method="_on_CkBtnUseMouse_toggled"]
+[node name="GoNextButton" type="Button" parent="."]
+margin_left = 2016.0
+margin_top = 961.0
+margin_right = 2080.0
+margin_bottom = 981.0
+rect_scale = Vector2( 4, 4 )
+hint_tooltip = "Go to next level."
+text = "Go Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PreviousLevelButton" type="Button" parent="."]
+margin_left = 33.0
+margin_top = 272.0
+margin_right = 233.0
+margin_bottom = 626.0
+rect_rotation = -90.0
+rect_scale = Vector2( 0.4, 0.4 )
+hint_tooltip = "Go to previous level."
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevelButton" type="Button" parent="."]
+margin_left = 174.0
+margin_top = 317.0
+margin_right = 374.0
+margin_bottom = 667.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.4, 0.4 )
+hint_tooltip = "Go to next level."
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+material = SubResource( 1 )
+position = Vector2( 736, 894 )
+scale = Vector2( 5, 5 )
+amount = 100
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 1.39
+explosiveness = 0.5
+randomness = 0.15
+process_material = SubResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="GoNextButton" to="." method="_on_GoNextButton_pressed"]
+[connection signal="pressed" from="PreviousLevelButton" to="." method="_on_PreviousLevelButton_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_DelayTimer_timeout"]

@@ -16,6 +16,12 @@ public class Level_2 : Node2D
     private CheckBox checkBoxTwo;
     private CheckBox checkBoxThree;
     private CustomSignals _cs;
+    CheckBox checkBoxBirds;
+    CheckBox checkBoxKitten;
+    CheckBox checkBoxElephant;
+    CheckBox checkBoxBalls;
+
+
     public override void _Ready()
     {
         _FishSound = GetNode<AudioStreamPlayer>("One-Fish-Sound");
@@ -29,8 +35,11 @@ public class Level_2 : Node2D
         checkBoxOne = GetNode<CheckBox>("CheckBoxOne");
         checkBoxTwo = GetNode<CheckBox>("CheckBoxTwo");
         checkBoxThree = GetNode<CheckBox>("CheckBoxThree");
+        checkBoxBirds = GetNode<CheckBox>("CheckBoxBirds");
+        checkBoxKitten = GetNode<CheckBox>("CheckBoxKitten");
+        checkBoxElephant = GetNode<CheckBox>("CheckBoxElephant");
+        checkBoxBalls = GetNode<CheckBox>("CheckBoxBalls");
         _cs = GetNode<CustomSignals>("/root/CS");
-
     }
 
     public void _on_FishButton_pressed()
@@ -50,11 +59,6 @@ public class Level_2 : Node2D
 
     public void _on_Button_pressed()
     {
-        CheckBox checkBoxBirds = GetNode<CheckBox>("CheckBoxBirds");
-        CheckBox checkBoxKitten = GetNode<CheckBox>("CheckBoxKitten");
-        CheckBox checkBoxElephant = GetNode<CheckBox>("CheckBoxElephant");
-        CheckBox checkBoxBalls = GetNode<CheckBox>("CheckBoxBalls");
-
         totalMarks = checkBoxOnePressed == true ? totalMarks += 10 : totalMarks -= 0;
         totalMarks = checkBoxBirds.Pressed == true ? totalMarks -= 0 : totalMarks += 10;
         totalMarks = checkBoxBalls.Pressed == true ? totalMarks -= 0 : totalMarks += 10;
@@ -75,6 +79,16 @@ public class Level_2 : Node2D
 
     }
 
+    public void _on_PictureButton1_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D2").Play();
+
+    }
+
+    public void _on_PictureButton2_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D").Play();
+    }
 
     public void _on_CheckBoxOne_toggled(bool value)
     {

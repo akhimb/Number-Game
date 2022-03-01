@@ -16,7 +16,7 @@ public class Global : Node
         _cs.Connect("changeLevel", this, "CallNextLevel");
          _cs.Connect("callPreviousLevel", this, "CallPreviousLevel");
         this.DrawWidth = 40;
-        this.ChalkColor = new Color(1, 1, 1);
+        this.ChalkColor = new Color(255, 255, 255);
     }
 
     public int LapCounter

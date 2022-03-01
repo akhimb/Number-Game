@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/CountTheCandies.wav-7fd5a4825859260fe215a477a9803402.sample"
+
+[deps]
+
+source_file="res://Assets/Music/CountTheCandies.wav"
+dest_files=[ "res://import/CountTheCandies.wav-7fd5a4825859260fe215a477a9803402.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/Six.wav-3ac5cf44adac9140e9bf00ec976d89d6.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Six.wav"
+dest_files=[ "res://import/Six.wav-3ac5cf44adac9140e9bf00ec976d89d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

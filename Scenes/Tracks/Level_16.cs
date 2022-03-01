@@ -63,6 +63,16 @@ public class Level_16 : Node2D
         _EightFingersSound.Play();
     }
 
+    public void _on_PictureButton1_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D").Play();
+    }
+
+    public void _on_PictureButton2_pressed()
+    {
+         GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D2").Play();
+    }
+
     public void _on_NextLevel_pressed()
     {
         _cs.EmitSignal("changeLevel");

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/CountTheBottles.wav-084dd034e10f6bef6860b0226882135d.sample"
+
+[deps]
+
+source_file="res://Assets/Music/CountTheBottles.wav"
+dest_files=[ "res://import/CountTheBottles.wav-084dd034e10f6bef6860b0226882135d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

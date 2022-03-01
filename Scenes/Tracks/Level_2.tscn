@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Tracks/Level_2.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Level1/One-Fish_Sound.wav" type="AudioStream" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Images/Level1/Speaker.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Level1/Final-Won.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Music/Level1_1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Music/CountTheBirds.wav" type="AudioStream" id=11]
 
 [node name="Level_2" type="Node2D"]
 position = Vector2( 62, 202 )
@@ -34,9 +36,9 @@ stream = ExtResource( 6 )
 volume_db = 8.0
 
 [node name="CheckBoxOne" type="CheckBox" parent="."]
-margin_left = 1955.0
+margin_left = 1804.0
 margin_top = 50.0
-margin_right = 1979.0
+margin_right = 1866.0
 margin_bottom = 74.0
 rect_scale = Vector2( 4, 4 )
 __meta__ = {
@@ -44,9 +46,9 @@ __meta__ = {
 }
 
 [node name="CheckBoxTwo" type="CheckBox" parent="."]
-margin_left = 1956.0
+margin_left = 1802.0
 margin_top = 153.0
-margin_right = 1980.0
+margin_right = 1865.0
 margin_bottom = 177.0
 rect_scale = Vector2( 4, 4 )
 __meta__ = {
@@ -54,9 +56,9 @@ __meta__ = {
 }
 
 [node name="CheckBoxThree" type="CheckBox" parent="."]
-margin_left = 1958.0
+margin_left = 1807.0
 margin_top = 245.0
-margin_right = 1982.0
+margin_right = 1869.0
 margin_bottom = 269.0
 rect_scale = Vector2( 4, 4 )
 __meta__ = {
@@ -98,44 +100,43 @@ __meta__ = {
 
 [node name="CheckBoxBirds" type="CheckBox" parent="."]
 modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 729.0
-margin_top = 749.0
-margin_right = 753.0
-margin_bottom = 773.0
-rect_scale = Vector2( 4, 4 )
+margin_left = 637.0
+margin_top = 537.0
+margin_right = 776.0
+margin_bottom = 666.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBoxKitten" type="CheckBox" parent="."]
-modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 279.0
-margin_top = 745.0
-margin_right = 303.0
-margin_bottom = 769.0
-rect_scale = Vector2( 4, 4 )
+margin_left = 207.0
+margin_top = 546.0
+margin_right = 318.0
+margin_bottom = 652.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBoxElephant" type="CheckBox" parent="."]
 modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 1478.0
-margin_top = 748.0
-margin_right = 1502.0
-margin_bottom = 772.0
-rect_scale = Vector2( 4, 4 )
+margin_left = 1399.0
+margin_top = 555.0
+margin_right = 1511.0
+margin_bottom = 672.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBoxBalls" type="CheckBox" parent="."]
 modulate = Color( 0.839216, 0.74902, 0.74902, 1 )
-margin_left = 1089.0
-margin_top = 748.0
-margin_right = 1113.0
-margin_bottom = 772.0
-rect_scale = Vector2( 4, 4 )
+margin_left = 992.0
+margin_top = 565.0
+margin_right = 1119.0
+margin_bottom = 684.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,8 +160,8 @@ margin_bottom = -200.0
 [node name="FishButton" type="Button" parent="."]
 margin_left = 322.0
 margin_top = 273.0
-margin_right = 430.0
-margin_bottom = 369.0
+margin_right = 472.0
+margin_bottom = 423.0
 icon = ExtResource( 7 )
 flat = true
 expand_icon = true
@@ -171,14 +172,44 @@ __meta__ = {
 [node name="FingerButton" type="Button" parent="."]
 margin_left = 820.0
 margin_top = 285.0
-margin_right = 926.0
-margin_bottom = 388.0
+margin_right = 970.0
+margin_bottom = 435.0
 icon = ExtResource( 7 )
 flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PictureButton1" type="Button" parent="."]
+margin_left = 1184.0
+margin_top = -139.0
+margin_right = 1324.0
+margin_bottom = -5.0
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PictureButton2" type="Button" parent="."]
+margin_left = 98.0
+margin_top = 410.0
+margin_right = 238.0
+margin_bottom = 544.0
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = 8.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = 8.0
 
 [connection signal="toggled" from="CheckBoxOne" to="." method="_on_CheckBoxOne_toggled"]
 [connection signal="toggled" from="CheckBoxTwo" to="." method="_on_CheckBoxTwo_toggled"]
@@ -187,3 +218,5 @@ __meta__ = {
 [connection signal="pressed" from="GoNextButton" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="FishButton" to="." method="_on_FishButton_pressed"]
 [connection signal="pressed" from="FingerButton" to="." method="_on_FingerButton_pressed"]
+[connection signal="pressed" from="PictureButton1" to="." method="_on_PictureButton1_pressed"]
+[connection signal="pressed" from="PictureButton2" to="." method="_on_PictureButton2_pressed"]

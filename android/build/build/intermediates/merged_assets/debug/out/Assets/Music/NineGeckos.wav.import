@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/NineGeckos.wav-78713fcfeeead8d20d6ee0dd2c56dfa3.sample"
+
+[deps]
+
+source_file="res://Assets/Music/NineGeckos.wav"
+dest_files=[ "res://import/NineGeckos.wav-78713fcfeeead8d20d6ee0dd2c56dfa3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/CountTheEggs.wav-49cc39b7e2bd39bd2c0677838b568938.sample"
+
+[deps]
+
+source_file="res://Assets/Music/CountTheEggs.wav"
+dest_files=[ "res://import/CountTheEggs.wav-49cc39b7e2bd39bd2c0677838b568938.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
