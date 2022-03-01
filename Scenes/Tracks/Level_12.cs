@@ -11,16 +11,16 @@ public class Level_12 : Node2D
     private Button goNextButton;
     private Button submitButton;
     private Boolean checkBoxSixPressed;
-    private Boolean checkBoxSix2Pressed;
+    private Boolean checkBoxSix1Pressed;
     private CheckBox checkBoxFour;
     private CheckBox checkBoxFive;
     private CheckBox checkBoxSix;
     private CheckBox checkBoxSeven;
 
-    private CheckBox checkBoxFour2;
-    private CheckBox checkBoxFive2;
-    private CheckBox checkBoxSix2;
-    private CheckBox checkBoxSeven2;
+    private CheckBox checkBoxFour1;
+    private CheckBox checkBoxFive1;
+    private CheckBox checkBoxSix1;
+    private CheckBox checkBoxSeven1;
 
     private CustomSignals _cs;
 
@@ -39,10 +39,10 @@ public class Level_12 : Node2D
         checkBoxSix = GetNode<CheckBox>("CheckBoxSix");
         checkBoxSeven = GetNode<CheckBox>("CheckBoxSeven");
 
-        checkBoxFour2 = GetNode<CheckBox>("CheckBoxFour2");
-        checkBoxFive2 = GetNode<CheckBox>("CheckBoxFive2");
-        checkBoxSix2 = GetNode<CheckBox>("CheckBoxSix2");
-        checkBoxSeven2 = GetNode<CheckBox>("CheckBoxSeven2");
+        checkBoxFour1 = GetNode<CheckBox>("CheckBoxFour1");
+        checkBoxFive1 = GetNode<CheckBox>("CheckBoxFive1");
+        checkBoxSix1 = GetNode<CheckBox>("CheckBoxSix1");
+        checkBoxSeven1 = GetNode<CheckBox>("CheckBoxSeven1");
     }
 
     public void _on_GoNextButton_pressed()
@@ -60,6 +60,16 @@ public class Level_12 : Node2D
         _SixFingersSound.Play();
     }
 
+    public void _on_PictureButton1_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D").Play();
+    }
+
+    public void _on_PictureButton2_pressed()
+    {
+         GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D2").Play();
+    }
+
     public void _on_NextLevel_pressed()
     {
         _cs.EmitSignal("changeLevel");
@@ -68,7 +78,7 @@ public class Level_12 : Node2D
     public void _on_SubmitButton_pressed()
     {
         totalMarks += checkBoxSixPressed == true ? 10 : 0;
-        totalMarks += checkBoxSix2Pressed == true ? 10 : 0;
+        totalMarks += checkBoxSix1Pressed == true ? 10 : 0;
         submitButton.Visible = false;
         goNextButton.Visible = true;
         if (totalMarks < 10)
@@ -147,69 +157,69 @@ public class Level_12 : Node2D
         }
     }
 
-    public void _on_CheckBoxFour2_toggled(bool value)
+    public void _on_CheckBoxFour1_toggled(bool value)
     {
         if (value == true)
         {
-            checkBoxFive2.Disabled = true;
-            checkBoxSix2.Disabled = true;
-            checkBoxSeven2.Disabled = true;
+            checkBoxFive1.Disabled = true;
+            checkBoxSix1.Disabled = true;
+            checkBoxSeven1.Disabled = true;
         }
         else
         {
-            checkBoxFive2.Disabled = false;
-            checkBoxSix2.Disabled = false;
-            checkBoxSeven2.Disabled = false;
+            checkBoxFive1.Disabled = false;
+            checkBoxSix1.Disabled = false;
+            checkBoxSeven1.Disabled = false;
         }
 
     }
 
-    public void _on_CheckBoxFive2_toggled(bool value)
+    public void _on_CheckBoxFive1_toggled(bool value)
     {
         if (value == true)
         {
-            checkBoxFour2.Disabled = true;
-            checkBoxSix2.Disabled = true;
-            checkBoxSeven2.Disabled = true;
+            checkBoxFour1.Disabled = true;
+            checkBoxSix1.Disabled = true;
+            checkBoxSeven1.Disabled = true;
         }
         else
         {
-            checkBoxFour2.Disabled = false;
-            checkBoxSix2.Disabled = false;
-            checkBoxSeven2.Disabled = false;
+            checkBoxFour1.Disabled = false;
+            checkBoxSix1.Disabled = false;
+            checkBoxSeven1.Disabled = false;
         }
     }
 
-    public void _on_CheckBoxSix2_toggled(bool value)
+    public void _on_CheckBoxSix1_toggled(bool value)
     {
-        checkBoxSix2Pressed = value;
+        checkBoxSix1Pressed = value;
         if (value == true)
         {
-            checkBoxFour2.Disabled = true;
-            checkBoxFive2.Disabled = true;
-            checkBoxSeven2.Disabled = true;
+            checkBoxFour1.Disabled = true;
+            checkBoxFive1.Disabled = true;
+            checkBoxSeven1.Disabled = true;
         }
         else
         {
-            checkBoxFour2.Disabled = false;
-            checkBoxFive2.Disabled = false;
-            checkBoxSeven2.Disabled = false;
+            checkBoxFour1.Disabled = false;
+            checkBoxFive1.Disabled = false;
+            checkBoxSeven1.Disabled = false;
         }
     }
 
-    public void _on_CheckBoxSeven2_toggled(bool value)
+    public void _on_CheckBoxSeven1_toggled(bool value)
     {
         if (value == true)
         {
-            checkBoxFour2.Disabled = true;
-            checkBoxFive2.Disabled = true;
-            checkBoxSix2.Disabled = true;
+            checkBoxFour1.Disabled = true;
+            checkBoxFive1.Disabled = true;
+            checkBoxSix1.Disabled = true;
         }
         else
         {
-            checkBoxFour2.Disabled = false;
-            checkBoxFive2.Disabled = false;
-            checkBoxSix2.Disabled = false;
+            checkBoxFour1.Disabled = false;
+            checkBoxFive1.Disabled = false;
+            checkBoxSix1.Disabled = false;
         }
     }
 

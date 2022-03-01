@@ -217,7 +217,7 @@ ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidM
 	android:required
 		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:10:52-75
 instrumentation
-ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:11:5-16:55
+ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:11:5-16:78
 REJECTED from [godot-lib.debug.aar] C:\Users\Totto\.gradle\caches\transforms-3\c6b37a3330c861fcebefdd62dec14d01\transformed\jetified-godot-lib.debug\AndroidManifest.xml:10:5-14:57
 	tools:node
 		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:12:9-29
@@ -226,7 +226,7 @@ REJECTED from [godot-lib.debug.aar] C:\Users\Totto\.gradle\caches\transforms-3\c
 	android:icon
 		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:14:9-36
 	android:targetPackage
-		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:16:9-52
+		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:16:9-75
 	android:name
 		ADDED from E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:13:9-45
 meta-data#org.godotengine.library.version

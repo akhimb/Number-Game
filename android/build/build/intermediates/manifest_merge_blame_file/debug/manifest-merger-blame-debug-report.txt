@@ -1,9 +1,9 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.akhimb.numbers"
+3    package="com.tinycardgames_andromomnumbers.numbers"
 4    android:installLocation="auto"
 5    android:versionCode="1"
-6    android:versionName="1.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+6    android:versionName="1.0.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 7    <uses-sdk
 8        android:minSdkVersion="19"
 9        android:targetSdkVersion="30" />
@@ -27,15 +27,15 @@
 19-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:10:52-75
 20
 21    <instrumentation
-21-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:11:5-16:55
+21-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:11:5-16:78
 22        android:name=".GodotInstrumentation"
 22-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:13:9-45
 23        android:icon="@mipmap/icon"
 23-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:14:9-36
 24        android:label="@string/godot_project_name_string"
 24-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:15:9-58
-25        android:targetPackage="org.akhimb.$genname" />
-25-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:16:9-52
+25        android:targetPackage="com.tinycardgames_andromomnumbers.$genname" />
+25-->E:\Git-Projects\Car-Game\Number-Game\android\build\src\debug\AndroidManifest.xml:16:9-75
 26
 27    <application
 27-->E:\Git-Projects\Car-Game\Number-Game\android\build\AndroidManifest.xml:31:5-73:19

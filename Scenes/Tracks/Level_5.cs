@@ -5,7 +5,6 @@ public class Level_5 : Node2D
     private AudioStreamPlayer _Three;
     private Global GLOBAL;
     private List<Vector2> _vectorArry;
-    private int _counter = 0;
     private bool isDrawable = false;
     private CustomSignals _cs;
     public override void _Ready()

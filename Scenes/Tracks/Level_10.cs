@@ -65,6 +65,16 @@ public class Level_10 : Node2D
         _cs.EmitSignal("changeLevel");
     }
 
+    public void _on_PictureButton1_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D").Play();
+    }
+
+    public void _on_PictureButton2_pressed()
+    {
+         GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D2").Play();
+    }
+
     public void _on_SubmitButton_pressed()
     {
         totalMarks += checkBoxFivePressed == true ? 10 : 0;

@@ -6,7 +6,6 @@ public class Level_9 : Node2D
 
     private AudioStreamPlayer _Five;
     private List<Vector2> _vectorArry;
-    private int _counter = 0;
     private bool isDrawable = false;
     private Global GLOBAL;
     private CustomSignals _cs;

@@ -64,6 +64,15 @@ public class Level_8 : Node2D
     {
         _cs.EmitSignal("changeLevel");
     }
+    public void _on_PictureButton1_pressed()
+    {
+        GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D").Play();
+    }
+
+    public void _on_PictureButton2_pressed()
+    {
+         GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D2").Play();
+    }
 
     public void _on_SubmitButton_pressed()
     {

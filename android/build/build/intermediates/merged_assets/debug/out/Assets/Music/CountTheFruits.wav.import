@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/CountTheFruits.wav-f0f579240cbef13493d6169b5149f762.sample"
+
+[deps]
+
+source_file="res://Assets/Music/CountTheFruits.wav"
+dest_files=[ "res://import/CountTheFruits.wav-f0f579240cbef13493d6169b5149f762.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/GameUI.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Home.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Music/Yes.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Music/Clap.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Sprites/kenney_racingpack_updated (1)/PNG/Objects/arrow_yellow.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Particles/floaty_64.png" type="Texture" id=5]
 
@@ -17,7 +17,7 @@ particles_anim_loop = false
 offsets = PoolRealArray( 0, 0.949772 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.177139, 0.244833, 0.964844, 1 )
 
-[sub_resource type="GradientTexture" id=3]
+[sub_resource type="GradientTexture" id=5]
 gradient = SubResource( 2 )
 
 [sub_resource type="ParticlesMaterial" id=4]
@@ -33,7 +33,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 270.0
 angle_random = 1.0
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 5 )
 hue_variation = 1.0
 hue_variation_random = 1.0
 anim_speed = 1.0
@@ -68,13 +68,14 @@ __meta__ = {
 stream = ExtResource( 3 )
 
 [node name="HomeButton" type="Button" parent="."]
-margin_left = 66.0
-margin_top = 56.0
-margin_right = 110.0
-margin_bottom = 94.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 45.0
+margin_top = 45.0
+margin_right = 89.0
+margin_bottom = 83.0
+rect_scale = Vector2( 2.66384, 2.66384 )
 hint_tooltip = "Go to home page."
 icon = ExtResource( 2 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,28 +93,30 @@ __meta__ = {
 }
 
 [node name="PreviousLevelButton" type="Button" parent="."]
-margin_left = 70.0
+margin_left = 33.0
 margin_top = 272.0
-margin_right = 270.0
-margin_bottom = 472.0
+margin_right = 233.0
+margin_bottom = 626.0
 rect_rotation = -90.0
 rect_scale = Vector2( 0.4, 0.4 )
 hint_tooltip = "Go to previous level."
 icon = ExtResource( 4 )
+flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextLevelButton" type="Button" parent="."]
-margin_left = 151.0
+margin_left = 174.0
 margin_top = 317.0
-margin_right = 351.0
-margin_bottom = 517.0
+margin_right = 374.0
+margin_bottom = 667.0
 rect_rotation = 90.0
 rect_scale = Vector2( 0.4, 0.4 )
 hint_tooltip = "Go to next level."
 icon = ExtResource( 4 )
+flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false

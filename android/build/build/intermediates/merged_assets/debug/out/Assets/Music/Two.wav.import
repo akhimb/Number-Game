@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://import/Two.wav-be646e97eb73f053790a03cb4ddde137.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Two.wav"
+dest_files=[ "res://import/Two.wav-be646e97eb73f053790a03cb4ddde137.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
