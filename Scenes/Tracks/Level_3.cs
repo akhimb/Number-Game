@@ -84,9 +84,5 @@ public class Level_3 : Node2D
                 _cs.EmitSignal("allowMove");
             }
         }
-
     }
-
-
-
 }

@@ -1,11 +1,64 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://HandDot/HandDot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/kenney_racingpack_updated (1)/PNG/Objects/CircledArrow.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Templates/0.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Tracks/Level_19.cs" type="Script" id=6]
 [ext_resource path="res://Assets/Music/Zero.wav" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("DummyHandDot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1275, 200 ), Vector2( 1148, 168 ), Vector2( 1034, 187 ), Vector2( 871, 305 ), Vector2( 822, 532 ), Vector2( 869, 767 ), Vector2( 1077, 922 ), Vector2( 1312, 865 ), Vector2( 1409, 715 ), Vector2( 1443, 554 ), Vector2( 1405, 366 ), Vector2( 1293, 216 ), Vector2( 1136, 167 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DummyHandDot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DummyHandDot:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.1, 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DummyHandDot:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -239.781, -271.882, -294.628, -327.464, -358.332, -392.473, -443.598, -480.771, -517.442, -545.742, -559.881, -596.692, -630.086 ]
+}
 
 [node name="Level_19" type="Node2D"]
 script = ExtResource( 6 )
@@ -116,7 +169,18 @@ offset = Vector2( 2340, 1080 )
 current = true
 
 [node name="HandDot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1276, 205 )
+position = Vector2( 1314, 222 )
 
 [node name="Zero" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="HandDotMovementAnimation" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+playback_speed = 0.25
+"anims/New Anim" = SubResource( 1 )
+
+[node name="DummyHandDot" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1136, 167 )
+rotation = -10.9971
+texture = ExtResource( 4 )

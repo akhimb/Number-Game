@@ -11,7 +11,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
-length = 2.0
+length = 2.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("DummyHandDot:position")
 tracks/0/interp = 1
@@ -19,10 +19,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 0.8, 1.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1192, 120 ), Vector2( 1191, 108 ), Vector2( 1198, 914 ) ]
+"values": [ Vector2( 1192, 120 ), Vector2( 1192, 120 ), Vector2( 1191, 108 ), Vector2( 1198, 914 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("DummyHandDot:scale")
@@ -43,10 +43,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.3, 0.5, 0.6, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 776, 384 ), Vector2( 1240, 144 ), Vector2( 1232, 184 ), Vector2( 1232, 952 ) ]
+"values": [ Vector2( 776, 384 ), Vector2( 776, 384 ), Vector2( 1240, 144 ), Vector2( 1232, 184 ), Vector2( 1232, 952 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Hand:visible")
@@ -55,10 +55,22 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DummyHandDot:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.501, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -146,6 +158,7 @@ playback_speed = 0.25
 "anims/New Anim" = SubResource( 1 )
 
 [node name="DummyHandDot" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1198, 914 )
 scale = Vector2( 1.16, 1.16 )
 texture = ExtResource( 4 )
@@ -157,5 +170,6 @@ playback_speed = 2.0
 "anims/New Circle" = SubResource( 2 )
 
 [node name="Hand" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1232, 952 )
 texture = ExtResource( 8 )

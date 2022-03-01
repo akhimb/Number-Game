@@ -12,6 +12,10 @@ public class Level_7 : Node2D
     private HandDot _handDot;
     Timer _delayTimer;
     private bool timerActivated = false;
+    private AnimationPlayer _animationPlayer;
+    private bool _isAnimationCompleted = false;
+    private Sprite _DummyHandDot;
+    private HandDot _HandDot;
     public override void _Ready()
     {
         GLOBAL = GetNode<Global>("/root/Global");
@@ -29,6 +33,14 @@ public class Level_7 : Node2D
         this._delayTimer.OneShot = true;
         this._delayTimer.WaitTime = 1f;
         this.timerActivated = false;
+        _animationPlayer = GetNode<AnimationPlayer>("HandDotMovementAnimation");
+        _animationPlayer.CurrentAnimation = "New Anim";
+        _animationPlayer.Play();
+        _isAnimationCompleted = false;
+        _DummyHandDot = GetNode<Sprite>("DummyHandDot");
+        _DummyHandDot.Visible = true;
+        _HandDot = GetNode<HandDot>("HandDot");
+        _HandDot.Visible = false;
 
     }
     public override void _Draw()
@@ -37,7 +49,7 @@ public class Level_7 : Node2D
         {
             for (int i = 0; i < this._vectorArry.Count; i++)
             {
-                DrawCircle(this._vectorArry[i],GLOBAL.DrawWidth,GLOBAL.ChalkColor);
+                DrawCircle(this._vectorArry[i], GLOBAL.DrawWidth, GLOBAL.ChalkColor);
             }
         }
     }
@@ -69,6 +81,25 @@ public class Level_7 : Node2D
 
     public override void _Process(float delta)
     {
+        if (!_isAnimationCompleted)
+        {
+            if (_animationPlayer.IsPlaying())
+            {
+                if(this._DummyHandDot.Visible)
+                this._vectorArry.Add(this._DummyHandDot.Position);
+                Update();
+            }
+            else if (!this.isDrawable)
+            {
+                _isAnimationCompleted = true;
+                _DummyHandDot.Visible = false;
+                _HandDot.Visible = true;
+                this._vectorArry.Clear();
+                Update();
+                _cs.EmitSignal("allowMove");
+            }
+        }
+
         if (_checkPoint7._isActive)
         {
             if (!timerActivated)
@@ -76,7 +107,7 @@ public class Level_7 : Node2D
                 this._handDot.Hide();
                 this._delayTimer.Start();
                 this.timerActivated = true;
-                
+
             }
         }
     }
